@@ -1,0 +1,5 @@
+@import url('');
+
+[data-theme='apptheme'] {
+  --background: #ffff;
+}
