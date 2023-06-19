@@ -1,14 +1,14 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 interface TextProps {
   active: boolean;
 }
 
-export const CostumLabel = styled.label`
+export const CostumLabel = styled.label<TextProps>`
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 30px;
+  width: 47px;
+  height: 22px;
 
   span {
     position: absolute;
@@ -17,7 +17,7 @@ export const CostumLabel = styled.label`
     left: 0;
     right: 0;
     bottom: 0;
-    background: #2c3e50;
+    background: var(--secundColor);
     transition: 0.3s;
     border-radius: 30px;
   }
@@ -25,17 +25,18 @@ export const CostumLabel = styled.label`
   span:before {
     position: absolute;
     content: "";
-    height: 25px;
-    width: 25px;
-    left: 3px;
+    height: 16px;
+    width: 20px;
+    ${props => props.active && 'left: -5.5px;'}
+    ${props => props.active === false && 'left: 3px;'}
     bottom: 2.6px;
     background-color: #fff;
-    border-radius: 50%;
+    border-radius: 45%;
     transition: 0.3s;
   }
 
   input:checked + span {
-    background-color: #00c853;
+    background-color: var(--servicesBackground);
   }
 
   input:checked + span:before {
@@ -49,9 +50,10 @@ export const CostumInput = styled.input`
 `
 
 export const StrongText = styled.strong<TextProps>`
+  font-size: 12.5px;
   position: absolute;
-  ${props => props.active && 'left: 10px;'}
-  ${props => props.active === false && 'right: 10px;'}
+  ${props => props.active && 'left: 5px;'}
+  ${props => props.active === false && 'right: 5px;'}
   top: 50%;
   transform: translateY(-50%);
 `

@@ -9,7 +9,7 @@ interface Props {
 
 export const Toggle: React.FC<Props> = ({firstOption, secondOption, toggled, onClick }: Props) => {
   return (
-    <CostumLabel>
+    <CostumLabel active={toggled}>
       <CostumInput type="checkbox" defaultChecked={toggled} onClick={onClick} />
       <span />
       <StrongText active={toggled}>{toggled ? firstOption : secondOption}</StrongText>

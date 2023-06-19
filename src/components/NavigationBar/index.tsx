@@ -20,8 +20,8 @@ export const NavigationBar: React.FC = () => {
           <li><a href="#">ABOUT</a></li>
 
           <Toggle 
-            firstOption='pt'
-            secondOption='en'
+            firstOption='PT'
+            secondOption='EN'
             onClick={() => setToggled(toggleState ? false : true)} 
             toggled={toggleState}
           />
