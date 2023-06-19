@@ -1,10 +1,12 @@
-import { Container } from "./styles";
+import { NavigationBar } from "components/NavigationBar";
+import { Container, SetPageColor } from "./styles";
 
 export const DeveloperPage: React.FC = () => {
-    return (
-        <Container>
-            <label htmlFor="">dasdassd</label>
-        </Container>
-        );
+	return (
+		<SetPageColor>
+			<Container>
+				<NavigationBar/>
+			</Container>
+		</SetPageColor>
+	);
 }
-
