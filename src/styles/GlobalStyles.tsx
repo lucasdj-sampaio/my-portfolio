@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, p, label, a, table, span, div {
-    font-family: 'FONTNAME', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
   }
   
   html {
