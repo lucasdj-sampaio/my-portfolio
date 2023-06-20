@@ -16,6 +16,11 @@ const GlobalStyles = createGlobalStyle`
     font-size: 16px;
   }
 
+  body {
+    background-color: var(--background);
+    overflow-x: hidden;
+  }
+
   body, input, button {
     font-size: 1rem;
   }
