@@ -47,3 +47,15 @@ export const ApresentationName = styled.div`
     margin-bottom: 10px;
   }
 `;
+
+export const PageSection = styled.section`
+  padding: 44px 0;
+`;
+
+export const SkillContent = styled.div`
+  margin-top: 39px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 68px;
+  padding: 0 30px;
+`;
