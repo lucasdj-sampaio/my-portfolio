@@ -1,11 +1,11 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 interface LineProps {
   lineOn: boolean;
 }
 
 export const TitleContent = styled.div<LineProps>`
-  text-align: ${p => p.lineOn ? 'center' : 'left'};
+  text-align: ${p => (p.lineOn ? 'center' : 'left')};
 
   h2 {
     display: inline-block;
@@ -14,8 +14,8 @@ export const TitleContent = styled.div<LineProps>`
     position: relative;
     padding-bottom: 10px;
 
-    ${({lineOn}) => {
-       if (lineOn) {
+    ${({ lineOn }) => {
+      if (lineOn) {
         return css`
           ::before {
             width: 150px;
@@ -32,6 +32,6 @@ export const TitleContent = styled.div<LineProps>`
       }
 
       return '';
-    }} 
+    }}
   }
-`
+`;

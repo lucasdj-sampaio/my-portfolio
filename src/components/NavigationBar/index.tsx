@@ -1,7 +1,6 @@
-import { Toggle } from "components/atoms/Toggle";
-import { Bar, NavItems, UserPhoto } from "./styles";
-import { useState } from "react";
-
+import { Toggle } from 'components/atoms/Toggle';
+import { useState } from 'react';
+import { Bar, NavItems, UserPhoto } from './styles';
 
 export const NavigationBar: React.FC = () => {
   const [toggleState, setToggled] = useState(true);
@@ -9,24 +8,33 @@ export const NavigationBar: React.FC = () => {
   return (
     <Bar>
       <UserPhoto>
-        <img alt="profile" src={`${process.env.REACT_APP_GIT_URL}.png?size=45`}/>
+        <img
+          alt="profile"
+          src={`${process.env.REACT_APP_GIT_URL}.png?size=45`}
+        />
         <label>Sampaio</label>
       </UserPhoto>
 
       <nav>
         <NavItems>
-          <li><a href="#">WORK</a></li>
-          <li><a href="#">SERVICES</a></li>
-          <li><a href="#">ABOUT</a></li>
+          <li>
+            <a href="#">WORK</a>
+          </li>
+          <li>
+            <a href="#">SERVICES</a>
+          </li>
+          <li>
+            <a href="#">ABOUT</a>
+          </li>
 
-          <Toggle 
-            firstOption='PT'
-            secondOption='EN'
-            onClick={() => setToggled(toggleState ? false : true)} 
+          <Toggle
+            firstOption="PT"
+            secondOption="EN"
+            onClick={() => setToggled(toggleState ? false : true)}
             toggled={toggleState}
           />
         </NavItems>
       </nav>
     </Bar>
-  ); 
-}
+  );
+};

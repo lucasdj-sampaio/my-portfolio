@@ -1,10 +1,10 @@
-import { ReactElement } from "react";
-import { SkillProperty } from "shared/types/SkillProperty";
-import { IoLogoJavascript } from "react-icons/io";
-import { FaReact, FaPython } from "react-icons/fa";
-import { SiCsharp, SiTypescript, SiSelenium} from "react-icons/si";
-import { SkillBar } from "components/atoms/SkillBar";
-import { GroupSkillDiv } from "./styled";
+import { SkillBar } from 'components/atoms/SkillBar';
+import { ReactElement } from 'react';
+import { FaPython, FaReact } from 'react-icons/fa';
+import { IoLogoJavascript } from 'react-icons/io';
+import { SiCsharp, SiSelenium, SiTypescript } from 'react-icons/si';
+import { SkillProperty } from 'shared/types/SkillProperty';
+import { GroupSkillDiv } from './styled';
 
 const getSkillIcon = (Title: string): ReactElement => {
   switch (Title) {
@@ -19,19 +19,24 @@ const getSkillIcon = (Title: string): ReactElement => {
     case 'Python':
       return <FaPython />;
     case 'Selenium':
-      return < SiSelenium />;
+      return <SiSelenium />;
   }
 };
 
-export const Skill: React.FC<SkillProperty> = ({Porcent, Title}: SkillProperty) => {
+export const Skill: React.FC<SkillProperty> = ({
+  Porcent,
+  Title,
+  SpanText,
+}: SkillProperty) => {
   const icon = getSkillIcon(Title);
-  return (<GroupSkillDiv>
-    {icon}
+  return (
+    <GroupSkillDiv>
+      {icon}
 
-    <div>
-      <h3>{Title}</h3>
-      <SkillBar porcent={Porcent}/>
-    </div>
-  </GroupSkillDiv>
+      <div>
+        <h3>{Title}</h3>
+        <SkillBar porcent={Porcent} spanText={SpanText} />
+      </div>
+    </GroupSkillDiv>
   );
-}
+};

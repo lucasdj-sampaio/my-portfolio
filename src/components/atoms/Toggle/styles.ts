@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface TextProps {
   active: boolean;
@@ -24,7 +24,7 @@ export const CostumLabel = styled.label<TextProps>`
 
   span:before {
     position: absolute;
-    content: "";
+    content: '';
     height: 16px;
     width: 20px;
     ${props => props.active && 'left: -5.5px;'}
@@ -42,12 +42,12 @@ export const CostumLabel = styled.label<TextProps>`
   input:checked + span:before {
     transform: translateX(29px);
   }
-`
+`;
 export const CostumInput = styled.input`
   opacity: 0;
   width: 0;
   height: 0;
-`
+`;
 
 export const StrongText = styled.strong<TextProps>`
   font-size: 12.5px;
@@ -56,4 +56,4 @@ export const StrongText = styled.strong<TextProps>`
   ${props => props.active === false && 'right: 5px;'}
   top: 50%;
   transform: translateY(-50%);
-`
+`;

@@ -62,7 +62,7 @@ export const HrDivisor = styled.div`
   display: grid;
   place-items: center;
 
-  hr{
+  hr {
     width: 800px;
     border-width: 0.5px;
   }
@@ -91,7 +91,7 @@ export const WorkImageDiv = styled.div`
     position: absolute;
     left: -37px;
     top: -37px;
-    transition: .5s;
+    transition: 0.5s;
 
     :hover {
       transform: translateY(6px) translateX(6px);
@@ -107,7 +107,7 @@ export const WorkContent = styled.div`
     margin-bottom: 10px;
   }
 
-  p{
+  p {
     color: var(--textColor);
     line-height: 25px;
   }

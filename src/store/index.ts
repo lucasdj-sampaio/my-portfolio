@@ -23,4 +23,4 @@ export type RootState = ReturnType<typeof store.getState>;
 export type MyDispatch = typeof store.dispatch;
 
 export const useAppDispatch = () => useDispatch<MyDispatch>();
-export { store, persistor };
+export { persistor, store };
