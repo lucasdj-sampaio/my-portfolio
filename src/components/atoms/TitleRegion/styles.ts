@@ -5,7 +5,7 @@ interface LineProps {
 }
 
 export const TitleContent = styled.div<LineProps>`
-  text-align: center;
+  text-align: ${p => p.lineOn ? 'center' : 'left'};
 
   h2 {
     display: inline-block;

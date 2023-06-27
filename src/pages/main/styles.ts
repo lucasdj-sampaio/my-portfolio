@@ -1,28 +1,26 @@
 import styled from 'styled-components';
 
-export const BackgroundContainer = styled.div`
-  width: 100vw;
-`;
+interface FileProps {
+  fileName: string;
+}
 
-export const BackgroundImageStyled = styled.img`
-  width: 100%;
-  max-height: 65vh;
+export const BackgroundContainer = styled.div<FileProps>`
+  width: 100vw;
+  height: 400px;
+  background-image: url(${p => p.fileName});
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 9%;
 `;
 
 export const Container = styled.div`
-  max-width: 1300px;
-  min-height: 100vh;
+  max-width: 1124px;
   margin: 0 auto;
 `;
 
 export const ApresentationContent = styled.div`
-  position: absolute;
-  top: 0;
-  margin-top: 10%;
   display: flex;
   justify-content: space-between;
-  width: 1300px;
-  padding: 0 20px;
   align-items: center;
 `;
 
@@ -49,7 +47,7 @@ export const ApresentationName = styled.div`
 `;
 
 export const PageSection = styled.section`
-  padding: 44px 0;
+  padding: 50px 0;
 `;
 
 export const SkillContent = styled.div`
@@ -58,4 +56,59 @@ export const SkillContent = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 32px 68px;
   padding: 0 30px;
+`;
+
+export const HrDivisor = styled.div`
+  display: grid;
+  place-items: center;
+
+  hr{
+    width: 800px;
+    border-width: 0.5px;
+  }
+`;
+
+export const WorkSection = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+`;
+
+export const WorkImageDiv = styled.div`
+  position: relative;
+  width: 380px;
+  height: 380px;
+  border: 4px solid var(--secundColor);
+  border-radius: 70px 5px 70px 5px;
+  margin-top: 37px;
+  margin-left: 37px;
+
+  img {
+    width: 400px;
+    height: 400px;
+    border-radius: 60px 5px 60px 5px;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    left: -37px;
+    top: -37px;
+    transition: .5s;
+
+    :hover {
+      transform: translateY(6px) translateX(6px);
+    }
+  }
+`;
+
+export const WorkContent = styled.div`
+  h2 {
+    color: var(--secundColor);
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  p{
+    color: var(--textColor);
+    line-height: 25px;
+  }
 `;
