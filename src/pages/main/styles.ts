@@ -112,3 +112,8 @@ export const WorkContent = styled.div`
     line-height: 25px;
   }
 `;
+
+export const ServicesDivision = styled.div`
+  background-color: var(--servicesBackground);
+  padding: 25px 80px;
+`;

@@ -10,6 +10,7 @@ import {
   Container,
   HrDivisor,
   PageSection,
+  ServicesDivision,
   SkillContent,
   SocialMediaStyles,
   WorkContent,
@@ -58,7 +59,7 @@ export const DeveloperPage: React.FC = () => {
         <NavigationBar />
 
         <PageSection>
-          <TitleRegion title={'SKILLS'} lineOn={true} />
+          <TitleRegion title={'SKILLS'} />
 
           <SkillContent>
             {skills.map((skill, i) => (
@@ -94,6 +95,10 @@ export const DeveloperPage: React.FC = () => {
           </WorkSection>
         </PageSection>
       </Container>
+
+      <ServicesDivision>
+        <TitleRegion title="SERVICES" />
+      </ServicesDivision>
     </>
   );
 };

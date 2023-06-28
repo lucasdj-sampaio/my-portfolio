@@ -2,7 +2,7 @@ import { TitleContent } from './styles';
 
 interface Props {
   title: string;
-  lineOn: boolean;
+  lineOn?: boolean;
 }
 
 export const TitleRegion: React.FC<Props> = ({ title, lineOn }: Props) => {
@@ -11,4 +11,8 @@ export const TitleRegion: React.FC<Props> = ({ title, lineOn }: Props) => {
       <h2>{title}</h2>
     </TitleContent>
   );
+};
+
+TitleRegion.defaultProps = {
+  lineOn: true,
 };
