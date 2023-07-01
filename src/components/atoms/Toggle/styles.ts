@@ -17,7 +17,7 @@ export const CostumLabel = styled.label<TextProps>`
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--secundColor);
+    background: var(--servicesBackground);
     transition: 0.3s;
     border-radius: 30px;
   }
@@ -36,7 +36,7 @@ export const CostumLabel = styled.label<TextProps>`
   }
 
   input:checked + span {
-    background-color: var(--servicesBackground);
+    background-color: var(--secundColor);
   }
 
   input:checked + span:before {

@@ -1,16 +1,17 @@
 import { ServiceCardProp } from 'shared/types/ServiceCardProp';
 import { AiOutlineArrowRight } from 'react-icons/ai';
-import { StyledCard, StyledCardContent } from './styles';
+import { StyledCard, StyledCardContent, StyledImage } from './styles';
 
 export const ServicesCard: React.FC<ServiceCardProp> = ({
   Image,
   Title,
   Description,
+  TopSpacement,
   SeeMore,
 }: ServiceCardProp) => {
   return (
-    <StyledCard>
-      <img src={Image} alt="Service image" />
+    <StyledCard TopSpacement={TopSpacement}>
+      <StyledImage src={Image} alt="Service image" />
 
       <StyledCardContent disable={SeeMore.Private}>
         <div>

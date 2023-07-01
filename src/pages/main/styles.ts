@@ -115,5 +115,12 @@ export const WorkContent = styled.div`
 
 export const ServicesDivision = styled.div`
   background-color: var(--servicesBackground);
-  padding: 25px 80px;
+  padding: 25px 0 80px 0;
+`;
+
+export const ServiceSlide = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  margin-top: 30px;
 `;

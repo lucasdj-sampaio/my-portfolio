@@ -1,13 +1,35 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface DisabledSeeMore {
   disable?: boolean;
 }
 
-export const StyledCard = styled.div`
+interface TopSpacementProp {
+  TopSpacement?: boolean;
+}
+
+export const StyledCard = styled.div<TopSpacementProp>`
   background-color: var(--textColor);
   border-radius: 25px;
   overflow: hidden;
+  transform: translateY(${p => (p.TopSpacement ? '50px' : '0px')});
+  transition: 0.6s;
+
+  ${({ TopSpacement }) => {
+    if (TopSpacement) {
+      return css`
+        :hover {
+          transform: translateY(0px);
+        }
+      `;
+    }
+
+    return '';
+  }}
+`;
+
+export const StyledImage = styled.img`
+  width: 100%;
 `;
 
 export const StyledCardContent = styled.div<DisabledSeeMore>`
@@ -15,9 +37,10 @@ export const StyledCardContent = styled.div<DisabledSeeMore>`
   flex-direction: column;
   justify-content: space-between;
   padding: 20px 20px 25px 20px;
+  height: 200px;
 
   h3 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     margin-bottom: 15px;
     color: var(--secundColor);
@@ -31,9 +54,23 @@ export const StyledCardContent = styled.div<DisabledSeeMore>`
     font-weight: 500;
     color: var(${p => (p.disable ? '--secundColor' : '--servicesBackground')});
     cursor: ${p => (p.disable ? 'pointer' : 'default')};
+    outline: none;
+
+    ${({ disable }) => {
+      if (disable) {
+        return css`
+          :hover svg {
+            transform: translateX(5px);
+            transition: 0.5s;
+          }
+        `;
+      }
+
+      return '';
+    }}
   }
 
   p {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;

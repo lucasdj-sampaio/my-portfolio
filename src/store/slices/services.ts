@@ -1,6 +1,11 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { act } from 'react-dom/test-utils';
 import { ServiceCardProp } from 'shared/types/ServiceCardProp';
+//@ts-ignore
+import VpnImage from '../../images/vpn_service.png';
+//@ts-ignore
+import PassImage from '../../images/pass_service.png';
+//@ts-ignore
+import IngressImage from '../../images/ingress_service.jpg';
 
 interface arrayProps {
   services: ServiceCardProp[];
@@ -9,7 +14,7 @@ interface arrayProps {
 const initialENState: arrayProps = {
   services: [
     {
-      Image: '',
+      Image: VpnImage,
       Title: 'VPNConnectAutomation',
       Description: `I was create a software used to connect at 
         FortClient and Cisco VPN automatic, Click to see more about it!`,
@@ -19,7 +24,7 @@ const initialENState: arrayProps = {
       },
     },
     {
-      Image: '',
+      Image: PassImage,
       Title: 'CreateRandomPasswords',
       Description: `You know that taking care of security is important, right? 
         but we know how tedious it is to have to change your passwords often. 
@@ -30,7 +35,7 @@ const initialENState: arrayProps = {
       },
     },
     {
-      Image: '',
+      Image: IngressImage,
       Title: 'BuyIngressRpa',
       Description: `This is a solution to buy online ticket using json parameters`,
       SeeMore: { Private: false, Link: '' },
@@ -41,7 +46,7 @@ const initialENState: arrayProps = {
 const initialPtState: arrayProps = {
   services: [
     {
-      Image: '',
+      Image: VpnImage,
       Title: 'VPNConnectAutomation',
       Description: `Eu criei um software usado para se conectar automaticamente ao FortClient e ao Cisco VPN. 
         Clique para saber mais sobre isso!`,
@@ -51,7 +56,7 @@ const initialPtState: arrayProps = {
       },
     },
     {
-      Image: '',
+      Image: PassImage,
       Title: 'CreateRandomPasswords',
       Description: `Você sabe que cuidar da segurança é importante, não é? Mas sabemos 
       o quão tedioso é ter que trocar suas senhas com frequência. Para resolver isso,
@@ -62,7 +67,7 @@ const initialPtState: arrayProps = {
       },
     },
     {
-      Image: '',
+      Image: IngressImage,
       Title: 'BuyIngressRpa',
       Description: `Esta é uma solução para comprar ingressos online usando parâmetros JSON.`,
       SeeMore: { Private: false, Link: '' },

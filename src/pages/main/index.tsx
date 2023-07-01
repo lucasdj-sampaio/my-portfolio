@@ -10,6 +10,7 @@ import {
   Container,
   HrDivisor,
   PageSection,
+  ServiceSlide,
   ServicesDivision,
   SkillContent,
   SocialMediaStyles,
@@ -110,22 +111,27 @@ export const DeveloperPage: React.FC = () => {
       </Container>
 
       <ServicesDivision>
-        <TitleRegion title="SERVICES" />
+        <Container>
+          <TitleRegion title="SERVICES" />
 
-        {servicesData.services.map((data, i) => {
-          return (
-            <ServicesCard
-              Image={''}
-              Title={data.Title}
-              Description={data.Description}
-              SeeMore={{
-                Private: data.SeeMore.Private,
-                Link: data.SeeMore.Link,
-              }}
-              key={`serviceCard_${data}_${i}`}
-            />
-          );
-        })}
+          <ServiceSlide>
+            {servicesData.services.map((data, i) => {
+              return (
+                <ServicesCard
+                  Image={data.Image}
+                  Title={data.Title}
+                  Description={data.Description}
+                  SeeMore={{
+                    Private: data.SeeMore.Private,
+                    Link: data.SeeMore.Link,
+                  }}
+                  TopSpacement={i % 2 === 0 ? false : true}
+                  key={`serviceCard_${data}_${i}`}
+                />
+              );
+            })}
+          </ServiceSlide>
+        </Container>
       </ServicesDivision>
     </>
   );
