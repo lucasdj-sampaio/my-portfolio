@@ -1,6 +1,6 @@
+import { serviceSlice } from './slices';
 import { combineReducers } from 'redux';
-import {} from './slices';
 
-const reducers = combineReducers({});
+const reducers = combineReducers({ serviceSlice });
 
 export default reducers;

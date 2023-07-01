@@ -1,3 +1,3 @@
-//import slice from './slice';
+import serviceSlice from './services';
 
-export {};
+export { serviceSlice };

@@ -21,8 +21,17 @@ import {
 import BackgroundImage from '../../images/background_profile.png';
 //@ts-ignore
 import WorkImage from '../../images/work_picture.jpg';
+import { ServicesCard } from 'components/ServicesCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'store';
+import { useEffect, useState } from 'react';
+import { changeLanguage } from 'store/slices/services';
 
 export const DeveloperPage: React.FC = () => {
+  const dispatch = useDispatch();
+  const servicesData = useSelector((state: RootState) => state.serviceSlice);
+
+  const [toggleState, setToggled] = useState(true);
   const socialMedia = ['Git', 'Linkedin', 'Wpp'];
   const skills: SkillProperty[] = [
     { Title: 'C#', Porcent: 98, SpanText: 'Sr' },
@@ -32,6 +41,10 @@ export const DeveloperPage: React.FC = () => {
     { Title: 'TypeScript', Porcent: 88, SpanText: 'Sr' },
     { Title: 'Python', Porcent: 67, SpanText: 'Pl' },
   ];
+
+  useEffect(() => {
+    dispatch(changeLanguage({ toggleState: toggleState }));
+  }, [toggleState]);
 
   return (
     <>
@@ -56,7 +69,7 @@ export const DeveloperPage: React.FC = () => {
       </BackgroundContainer>
 
       <Container>
-        <NavigationBar />
+        <NavigationBar toggleState={toggleState} setToggled={setToggled} />
 
         <PageSection>
           <TitleRegion title={'SKILLS'} />
@@ -98,6 +111,21 @@ export const DeveloperPage: React.FC = () => {
 
       <ServicesDivision>
         <TitleRegion title="SERVICES" />
+
+        {servicesData.services.map((data, i) => {
+          return (
+            <ServicesCard
+              Image={''}
+              Title={data.Title}
+              Description={data.Description}
+              SeeMore={{
+                Private: data.SeeMore.Private,
+                Link: data.SeeMore.Link,
+              }}
+              key={`serviceCard_${data}_${i}`}
+            />
+          );
+        })}
       </ServicesDivision>
     </>
   );

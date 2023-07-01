@@ -4,6 +4,6 @@ export interface ServiceCardProp {
   Description: string;
   SeeMore: {
     Private: boolean;
-    Link: string;
+    Link?: string;
   };
 }

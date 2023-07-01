@@ -1,10 +1,16 @@
 import { Toggle } from 'components/atoms/Toggle';
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import { Bar, NavItems, UserPhoto } from './styles';
 
-export const NavigationBar: React.FC = () => {
-  const [toggleState, setToggled] = useState(true);
+interface NavigationProps {
+  toggleState: boolean;
+  setToggled: SetStateAction<any>;
+}
 
+export const NavigationBar: React.FC<NavigationProps> = ({
+  toggleState,
+  setToggled,
+}: NavigationProps) => {
   return (
     <Bar>
       <UserPhoto>
@@ -28,8 +34,8 @@ export const NavigationBar: React.FC = () => {
           </li>
 
           <Toggle
-            firstOption="PT"
-            secondOption="EN"
+            firstOption="EN"
+            secondOption="PT"
             onClick={() => setToggled(toggleState ? false : true)}
             toggled={toggleState}
           />
