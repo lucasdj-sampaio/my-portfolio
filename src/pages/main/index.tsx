@@ -136,7 +136,6 @@ export const DeveloperPage: React.FC = () => {
           </ButtonSlideGroup>
           <ServiceSlide>
             {servicesListRange().map((data, i) => {
-              console.log(servicesListRange());
               return (
                 <ServicesCard
                   Image={data.Image}
