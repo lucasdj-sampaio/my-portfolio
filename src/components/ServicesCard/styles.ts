@@ -37,7 +37,7 @@ export const StyledCardContent = styled.div<DisabledSeeMore>`
   flex-direction: column;
   justify-content: space-between;
   padding: 20px 20px 25px 20px;
-  height: 200px;
+  height: 215px;
 
   h3 {
     font-size: 16px;
@@ -71,6 +71,6 @@ export const StyledCardContent = styled.div<DisabledSeeMore>`
   }
 
   p {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
