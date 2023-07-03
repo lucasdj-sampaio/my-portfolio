@@ -9,7 +9,7 @@ export const BackgroundContainer = styled.div<FileProps>`
   background-image: url(${p => p.fileName});
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 9%;
+  padding: 9% 0 3% 0;
 `;
 
 export const Container = styled.div`
