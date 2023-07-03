@@ -1,11 +1,11 @@
 import { BsGithub, BsLinkedin, BsWhatsapp } from 'react-icons/bs';
-import { SocialMediaContact } from 'shared/types/SocialMediaContact';
+import { ISocialMediaContact } from 'shared/types/ISocialMediaContact';
 
 interface Props {
   type: 'Git' | 'Linkedin' | 'Wpp';
 }
 
-const getSocialMediaContact = (type: string): SocialMediaContact => {
+const getSocialMediaContact = (type: string): ISocialMediaContact => {
   switch (type) {
     case 'Git':
       return { Icon: BsGithub, Url: process.env.REACT_APP_GIT_URL };

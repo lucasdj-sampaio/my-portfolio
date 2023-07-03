@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 import { FaPython, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
 import { SiCsharp, SiSelenium, SiTypescript } from 'react-icons/si';
-import { SkillProperty } from 'shared/types/SkillProperty';
+import { ISkillProperty } from 'shared/types/ISkillProperty';
 import { GroupSkillDiv } from './styled';
 
 const getSkillIcon = (Title: string): ReactElement => {
@@ -23,11 +23,11 @@ const getSkillIcon = (Title: string): ReactElement => {
   }
 };
 
-export const Skill: React.FC<SkillProperty> = ({
+export const Skill: React.FC<ISkillProperty> = ({
   Porcent,
   Title,
   SpanText,
-}: SkillProperty) => {
+}: ISkillProperty) => {
   const icon = getSkillIcon(Title);
   return (
     <GroupSkillDiv>

@@ -2,14 +2,15 @@ import { NavigationBar } from 'components/NavigationBar';
 import { Skill } from 'components/Skill';
 import { SocialMediaIcon } from 'components/atoms/SocialMediaIconLink';
 import { TitleRegion } from 'components/atoms/TitleRegion';
-import { SkillProperty } from 'shared/types/SkillProperty';
 import {
   ApresentationContent,
   ApresentationName,
   BackgroundContainer,
+  ButtonSlideGroup,
   Container,
   HrDivisor,
   PageSection,
+  RightButton,
   ServiceSlide,
   ServicesDivision,
   SkillContent,
@@ -27,21 +28,28 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { useEffect, useState } from 'react';
 import { changeLanguage } from 'store/slices/services';
+import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 
 export const DeveloperPage: React.FC = () => {
   const dispatch = useDispatch();
+  const [toggleState, setToggled] = useState<boolean>(true);
+  const socialMedia = ['Git', 'Linkedin', 'Wpp'];
+
+  const skillsData = useSelector((state: RootState) => state.skillSlice);
   const servicesData = useSelector((state: RootState) => state.serviceSlice);
 
-  const [toggleState, setToggled] = useState(true);
-  const socialMedia = ['Git', 'Linkedin', 'Wpp'];
-  const skills: SkillProperty[] = [
-    { Title: 'C#', Porcent: 98, SpanText: 'Sr' },
-    { Title: 'Selenium', Porcent: 95, SpanText: 'Sr' },
-    { Title: 'JavaScript', Porcent: 92, SpanText: 'Sr' },
-    { Title: 'React', Porcent: 89, SpanText: 'Sr' },
-    { Title: 'TypeScript', Porcent: 88, SpanText: 'Sr' },
-    { Title: 'Python', Porcent: 67, SpanText: 'Pl' },
-  ];
+  const [serviceSlide, setServiceSlideIndex] = useState<number>(0);
+
+  const servicesListRange = () =>
+    servicesData.services.slice(serviceSlide, serviceSlide + 3);
+
+  function DecriseSlideIndex() {
+    setServiceSlideIndex(serviceSlide - 1);
+  }
+
+  function EncriseSlideIndex() {
+    setServiceSlideIndex(serviceSlide + 1);
+  }
 
   useEffect(() => {
     dispatch(changeLanguage({ toggleState: toggleState }));
@@ -76,7 +84,7 @@ export const DeveloperPage: React.FC = () => {
           <TitleRegion title={'SKILLS'} />
 
           <SkillContent>
-            {skills.map((skill, i) => (
+            {skillsData.skills.map((skill, i) => (
               <Skill
                 key={`element_${i}_${skill.Title}`}
                 Title={skill.Title as any}
@@ -113,9 +121,22 @@ export const DeveloperPage: React.FC = () => {
       <ServicesDivision>
         <Container>
           <TitleRegion title="SERVICES" />
+          <ButtonSlideGroup>
+            {serviceSlide !== 0 && (
+              <div onClick={DecriseSlideIndex}>
+                <BiLeftArrowAlt />
+              </div>
+            )}
 
+            {serviceSlide < servicesData.services.length - 3 && (
+              <RightButton onClick={EncriseSlideIndex}>
+                <BiRightArrowAlt />
+              </RightButton>
+            )}
+          </ButtonSlideGroup>
           <ServiceSlide>
-            {servicesData.services.map((data, i) => {
+            {servicesListRange().map((data, i) => {
+              console.log(servicesListRange());
               return (
                 <ServicesCard
                   Image={data.Image}

@@ -1,4 +1,4 @@
-export interface ServiceCardProp {
+export interface IServiceCardProp {
   Image: any;
   Title: string;
   Description: string;

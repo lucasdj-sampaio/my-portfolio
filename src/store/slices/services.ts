@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { ServiceCardProp } from 'shared/types/ServiceCardProp';
+import { IServiceCardProp } from 'shared/types/IServiceCardProp';
 //@ts-ignore
 import VpnImage from '../../images/vpn_service.png';
 //@ts-ignore
@@ -8,7 +8,7 @@ import PassImage from '../../images/pass_service.png';
 import IngressImage from '../../images/ingress_service.jpg';
 
 interface arrayProps {
-  services: ServiceCardProp[];
+  services: IServiceCardProp[];
 }
 
 const initialENState: arrayProps = {
@@ -38,6 +38,18 @@ const initialENState: arrayProps = {
       Image: IngressImage,
       Title: 'BuyIngressRpa',
       Description: `This is a solution to buy online ticket using json parameters`,
+      SeeMore: { Private: false, Link: '' },
+    },
+    {
+      Image: IngressImage,
+      Title: 'fsdfsdfdsfsd',
+      Description: `sdfsdfdsfdsfds`,
+      SeeMore: { Private: false, Link: '' },
+    },
+    {
+      Image: IngressImage,
+      Title: 'sdfsdfsdf',
+      Description: `sdfsdfsdfsd`,
       SeeMore: { Private: false, Link: '' },
     },
   ],
@@ -70,6 +82,18 @@ const initialPtState: arrayProps = {
       Image: IngressImage,
       Title: 'BuyIngressRpa',
       Description: `Esta é uma solução para comprar ingressos online usando parâmetros JSON.`,
+      SeeMore: { Private: false, Link: '' },
+    },
+    {
+      Image: IngressImage,
+      Title: 'sdfsfsdfds',
+      Description: `sdfsdfsdfsd`,
+      SeeMore: { Private: false, Link: '' },
+    },
+    {
+      Image: IngressImage,
+      Title: 'sdfsdfsdf',
+      Description: `sdfsfsdfds`,
       SeeMore: { Private: false, Link: '' },
     },
   ],

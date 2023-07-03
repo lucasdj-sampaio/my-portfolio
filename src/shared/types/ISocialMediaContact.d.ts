@@ -1,4 +1,4 @@
-export interface SocialMediaContact {
+export interface ISocialMediaContact {
   Icon: ReactElement;
   Url: string;
 }

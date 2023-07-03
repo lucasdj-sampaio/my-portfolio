@@ -1,14 +1,14 @@
-import { ServiceCardProp } from 'shared/types/ServiceCardProp';
+import { IServiceCardProp } from 'shared/types/IServiceCardProp';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { StyledCard, StyledCardContent, StyledImage } from './styles';
 
-export const ServicesCard: React.FC<ServiceCardProp> = ({
+export const ServicesCard: React.FC<IServiceCardProp> = ({
   Image,
   Title,
   Description,
   TopSpacement,
   SeeMore,
-}: ServiceCardProp) => {
+}: IServiceCardProp) => {
   return (
     <StyledCard TopSpacement={TopSpacement}>
       <StyledImage src={Image} alt="Service image" />

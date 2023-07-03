@@ -6,7 +6,6 @@ interface FileProps {
 
 export const BackgroundContainer = styled.div<FileProps>`
   width: 100vw;
-  height: 400px;
   background-image: url(${p => p.fileName});
   background-size: cover;
   background-repeat: no-repeat;
@@ -116,6 +115,46 @@ export const WorkContent = styled.div`
 export const ServicesDivision = styled.div`
   background-color: var(--servicesBackground);
   padding: 25px 0 80px 0;
+`;
+
+export const ButtonSlideGroup = styled.div`
+  display: flex;
+  position: absolute;
+  width: 1124px;
+  height: 45%;
+  align-items: center;
+  padding: 0 2px;
+
+  div {
+    background: rgba(255, 255, 255, 0.38);
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    z-index: 1;
+    transition: 0.5s;
+    height: 42px;
+    width: 42px;
+
+    :hover {
+      background: transparent;
+    }
+  }
+
+  svg {
+    color: var(--textColor);
+    cursor: pointer;
+    font-size: 42px;
+    transition: 0.5s;
+
+    :hover {
+      color: var(--secundColor);
+    }
+  }
+`;
+
+export const RightButton = styled.div`
+  position: absolute;
+  right: 3px;
 `;
 
 export const ServiceSlide = styled.div`

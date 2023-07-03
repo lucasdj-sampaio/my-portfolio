@@ -1,3 +1,4 @@
+import skillSlice from './skills';
 import serviceSlice from './services';
 
-export { serviceSlice };
+export { serviceSlice, skillSlice };
