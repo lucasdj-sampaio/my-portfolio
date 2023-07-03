@@ -86,7 +86,7 @@ const initialENState: arrayProps = {
   ],
 };
 
-const initialPtState: arrayProps = {
+const initialPTState: arrayProps = {
   services: [
     {
       Image: VpnImage,
@@ -159,13 +159,16 @@ export const serviceSlice = createSlice({
   name: 'services',
   initialState: initialENState,
   reducers: {
-    changeLanguage(state, action: PayloadAction<{ toggleState: boolean }>) {
+    changeServiceLanguage(
+      state,
+      action: PayloadAction<{ toggleState: boolean }>
+    ) {
       state.services = action.payload.toggleState
         ? initialENState.services
-        : initialPtState.services;
+        : initialPTState.services;
     },
   },
 });
 
-export const { changeLanguage } = serviceSlice.actions;
+export const { changeServiceLanguage } = serviceSlice.actions;
 export default serviceSlice.reducer;

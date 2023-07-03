@@ -27,11 +27,21 @@ import { ServicesCard } from 'components/ServicesCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { useEffect, useState } from 'react';
-import { changeLanguage } from 'store/slices/services';
+import { changeServiceLanguage } from 'store/slices/services';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+import { changeSectionLanguage } from 'store/slices/sections';
+import { changePageTextLanguage } from 'store/slices/otherTextTranslate';
 
 export const DeveloperPage: React.FC = () => {
   const dispatch = useDispatch();
+
+  const sectionsData = useSelector(
+    (state: RootState) => state.sectionSlice.sections
+  );
+  const otherPageTextData = useSelector(
+    (state: RootState) => state.pageTextSlice
+  );
+
   const [toggleState, setToggled] = useState<boolean>(true);
   const socialMedia = ['Git', 'Linkedin', 'Wpp'];
 
@@ -52,7 +62,9 @@ export const DeveloperPage: React.FC = () => {
   }
 
   useEffect(() => {
-    dispatch(changeLanguage({ toggleState: toggleState }));
+    dispatch(changeServiceLanguage({ toggleState: toggleState }));
+    dispatch(changeSectionLanguage({ toggleState: toggleState }));
+    dispatch(changePageTextLanguage({ toggleState: toggleState }));
   }, [toggleState]);
 
   return (
@@ -81,7 +93,7 @@ export const DeveloperPage: React.FC = () => {
         <NavigationBar toggleState={toggleState} setToggled={setToggled} />
 
         <PageSection>
-          <TitleRegion title={'SKILLS'} />
+          <TitleRegion title={otherPageTextData.skillText} />
 
           <SkillContent>
             {skillsData.skills.map((skill, i) => (
@@ -99,28 +111,23 @@ export const DeveloperPage: React.FC = () => {
           <hr />
         </HrDivisor>
 
-        <PageSection>
+        <PageSection id={`section_${sectionsData[0].toLowerCase()}`}>
           <WorkSection>
             <WorkImageDiv>
               <img alt="Work Image" src={WorkImage} />
             </WorkImageDiv>
 
             <WorkContent>
-              <TitleRegion lineOn={false} title="WORK" />
-              <p>
-                Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar,
-                então é... é... Já vivi muito sem dinheiro, já vivi muito com
-                dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a
-                senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?
-              </p>
+              <TitleRegion lineOn={false} title={sectionsData[0]} />
+              <p>{otherPageTextData.careerText}</p>
             </WorkContent>
           </WorkSection>
         </PageSection>
       </Container>
 
-      <ServicesDivision>
+      <ServicesDivision id={`section_${sectionsData[1].toLowerCase()}`}>
         <Container>
-          <TitleRegion title="SERVICES" />
+          <TitleRegion title={sectionsData[1]} />
           <ButtonSlideGroup>
             {serviceSlide !== 0 && (
               <div onClick={DecriseSlideIndex}>

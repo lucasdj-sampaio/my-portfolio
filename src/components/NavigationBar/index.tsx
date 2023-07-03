@@ -1,6 +1,8 @@
 import { Toggle } from 'components/atoms/Toggle';
-import { SetStateAction, useState } from 'react';
+import { SetStateAction } from 'react';
 import { Bar, NavItems, UserPhoto } from './styles';
+import { useSelector } from 'react-redux';
+import { RootState } from 'store';
 
 interface NavigationProps {
   toggleState: boolean;
@@ -11,6 +13,10 @@ export const NavigationBar: React.FC<NavigationProps> = ({
   toggleState,
   setToggled,
 }: NavigationProps) => {
+  const sectionsData = useSelector(
+    (state: RootState) => state.sectionSlice.sections
+  );
+
   return (
     <Bar>
       <UserPhoto>
@@ -23,15 +29,13 @@ export const NavigationBar: React.FC<NavigationProps> = ({
 
       <nav>
         <NavItems>
-          <li>
-            <a href="#">WORK</a>
-          </li>
-          <li>
-            <a href="#">SERVICES</a>
-          </li>
-          <li>
-            <a href="#">ABOUT</a>
-          </li>
+          {sectionsData.map((data, i) => {
+            return (
+              <li key={`section_${i}`}>
+                <a href={`#section_${data.toLowerCase()}`}>{data}</a>
+              </li>
+            );
+          })}
 
           <Toggle
             firstOption="EN"
