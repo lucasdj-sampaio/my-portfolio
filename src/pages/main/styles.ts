@@ -163,3 +163,11 @@ export const ServiceSlide = styled.div`
   column-gap: 30px;
   margin-top: 30px;
 `;
+
+export const AboutMeSlide = styled.div`
+  background-color: var(--textColor);
+  width: 1124px;
+  height: 772px;
+  border-radius: 20px;
+  margin-top: 39px;
+`;

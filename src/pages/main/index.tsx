@@ -3,6 +3,7 @@ import { Skill } from 'components/Skill';
 import { SocialMediaIcon } from 'components/atoms/SocialMediaIconLink';
 import { TitleRegion } from 'components/atoms/TitleRegion';
 import {
+  AboutMeSlide,
   ApresentationContent,
   ApresentationName,
   BackgroundContainer,
@@ -160,6 +161,14 @@ export const DeveloperPage: React.FC = () => {
           </ServiceSlide>
         </Container>
       </ServicesDivision>
+
+      <Container>
+        <PageSection id={`section_${sectionsData[2].toLowerCase()}`}>
+          <TitleRegion title={sectionsData[2]} />
+
+          <AboutMeSlide></AboutMeSlide>
+        </PageSection>
+      </Container>
     </>
   );
 };
