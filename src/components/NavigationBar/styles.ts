@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
-export const Bar = styled.div`
-  background-color: rgba(30, 30, 30, 0.12);
+interface BarColorProp {
+  scrooled: boolean;
+}
+
+export const Bar = styled.div<BarColorProp>`
+  background-color: ${p => p.scrooled ? 'var(--background)' : 'transparent'};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,7 +14,8 @@ export const Bar = styled.div`
   width: 100%;
   left: 0;
   padding: 5px 50px;
-  z-index: 1;
+  z-index: 2;
+  box-shadow: ${p => p.scrooled ? '0 2px 2px 2px rgba(0,0,0,0.4)' : 'transparent'};
 
   label {
     color: var(--textColor);

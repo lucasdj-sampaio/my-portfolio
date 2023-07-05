@@ -1,5 +1,5 @@
 import { Toggle } from 'components/atoms/Toggle';
-import { SetStateAction } from 'react';
+import { SetStateAction, useEffect, useState } from 'react';
 import { Bar, NavItems, UserPhoto } from './styles';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
@@ -17,8 +17,21 @@ export const NavigationBar: React.FC<NavigationProps> = ({
     (state: RootState) => state.sectionSlice.sections
   );
 
+  const [scrollPage, setScrollPosition] = useState<boolean>(false);
+
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY >= 340);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [])
+
   return (
-    <Bar>
+    <Bar scrooled={scrollPage}>
       <UserPhoto>
         <img
           alt="profile"

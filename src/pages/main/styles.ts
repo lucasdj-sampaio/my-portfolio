@@ -114,6 +114,7 @@ export const WorkContent = styled.div`
 
 export const ServicesDivision = styled.div`
   background-color: var(--servicesBackground);
+  position: relative;
   padding: 25px 0 80px 0;
 `;
 
@@ -121,8 +122,7 @@ export const ButtonSlideGroup = styled.div`
   display: flex;
   position: absolute;
   width: 1124px;
-  height: 45%;
-  align-items: center;
+  top: 41%;
   padding: 0 2px;
 
   div {
