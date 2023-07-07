@@ -32,6 +32,7 @@ import { changeServiceLanguage } from 'store/slices/services';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import { changeSectionLanguage } from 'store/slices/sections';
 import { changePageTextLanguage } from 'store/slices/otherTextTranslate';
+import { SwipeCarousel } from 'components/SwipeCarousel';
 
 export const DeveloperPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -166,7 +167,9 @@ export const DeveloperPage: React.FC = () => {
         <PageSection id={`section_${sectionsData[2].toLowerCase()}`}>
           <TitleRegion title={sectionsData[2]} />
 
-          <AboutMeSlide></AboutMeSlide>
+          <AboutMeSlide>
+            <SwipeCarousel />
+          </AboutMeSlide>
         </PageSection>
       </Container>
     </>
