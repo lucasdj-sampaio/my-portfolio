@@ -4,6 +4,7 @@ import { SocialMediaIcon } from 'components/atoms/SocialMediaIconLink';
 import { TitleRegion } from 'components/atoms/TitleRegion';
 import {
   AboutMeSlide,
+  AboutMeText,
   ApresentationContent,
   ApresentationName,
   BackgroundContainer,
@@ -169,6 +170,7 @@ export const DeveloperPage: React.FC = () => {
 
           <AboutMeSlide>
             <SwipeCarousel />
+            <AboutMeText />
           </AboutMeSlide>
         </PageSection>
       </Container>

@@ -165,9 +165,16 @@ export const ServiceSlide = styled.div`
 `;
 
 export const AboutMeSlide = styled.div`
-  background-color: var(--textColor);
-  width: 1124px;
-  height: 772px;
-  border-radius: 20px;
   margin-top: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const AboutMeText = styled.div`
+  border-radius: 20px;
+  height: 562px;
+  width: 482px;
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--secundColor);
 `;
