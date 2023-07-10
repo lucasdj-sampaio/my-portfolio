@@ -1,6 +1,7 @@
+import aboutSlice from './aboutme';
 import sectionSlice from './sections';
 import skillSlice from './skills';
 import serviceSlice from './services';
 import pageTextSlice from './otherTextTranslate';
 
-export { serviceSlice, skillSlice, sectionSlice, pageTextSlice };
+export { serviceSlice, skillSlice, sectionSlice, pageTextSlice, aboutSlice };

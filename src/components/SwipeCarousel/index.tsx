@@ -2,10 +2,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import { EffectCards } from 'swiper/modules';
-
+import { IAboutDataType } from 'shared/types/IAboutDataType';
 import { SwiperStyles } from './styles';
 
-export const SwipeCarousel: React.FC = () => {
+interface SwipeProp {
+  data: IAboutDataType[];
+}
+
+export const SwipeCarousel: React.FC<SwipeProp> = ({ data }: SwipeProp) => {
   return (
     <SwiperStyles>
       <Swiper
@@ -14,15 +18,13 @@ export const SwipeCarousel: React.FC = () => {
         modules={[EffectCards]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        {data.map(currentData => {
+          return (
+            <SwiperSlide key={`carouselid_${currentData.Id}`}>
+              <img src={currentData.Image} alt="Reference Image" />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </SwiperStyles>
   );

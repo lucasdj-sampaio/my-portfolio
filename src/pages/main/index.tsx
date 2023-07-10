@@ -44,6 +44,7 @@ export const DeveloperPage: React.FC = () => {
   const otherPageTextData = useSelector(
     (state: RootState) => state.pageTextSlice
   );
+  const aboutmeData = useSelector((state: RootState) => state.aboutSlice);
 
   const [toggleState, setToggled] = useState<boolean>(true);
   const socialMedia = ['Git', 'Linkedin', 'Wpp'];
@@ -169,7 +170,7 @@ export const DeveloperPage: React.FC = () => {
           <TitleRegion title={sectionsData[2]} />
 
           <AboutMeSlide>
-            <SwipeCarousel />
+            <SwipeCarousel data={aboutmeData.aboutData} />
             <AboutMeText />
           </AboutMeSlide>
         </PageSection>

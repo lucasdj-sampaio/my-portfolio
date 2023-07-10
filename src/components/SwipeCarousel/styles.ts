@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SwiperStyles = styled.div`
   .swiper {
-    width: 496.5px;
+    width: 454.87px;
     height: 662px;
   }
 
@@ -16,6 +16,5 @@ export const SwiperStyles = styled.div`
     color: #fff;
     background-color: var(--background);
     border: 1px solid var(--secundColor);
-    padding: 5px;
   }
 `;

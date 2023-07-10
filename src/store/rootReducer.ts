@@ -1,3 +1,4 @@
+import { aboutSlice } from './slices';
 import { sectionSlice } from './slices';
 import { skillSlice } from './slices';
 import { serviceSlice } from './slices';
@@ -9,6 +10,7 @@ const reducers = combineReducers({
   skillSlice,
   sectionSlice,
   pageTextSlice,
+  aboutSlice,
 });
 
 export default reducers;
