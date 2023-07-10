@@ -34,6 +34,7 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import { changeSectionLanguage } from 'store/slices/sections';
 import { changePageTextLanguage } from 'store/slices/otherTextTranslate';
 import { SwipeCarousel } from 'components/SwipeCarousel';
+import { changeAboutLanguage } from 'store/slices/aboutme';
 
 export const DeveloperPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -57,18 +58,27 @@ export const DeveloperPage: React.FC = () => {
   const servicesListRange = () =>
     servicesData.services.slice(serviceSlide, serviceSlide + 3);
 
-  function DecriseSlideIndex() {
+  function decriseSlideIndex() {
     setServiceSlideIndex(serviceSlide - 1);
   }
 
-  function EncriseSlideIndex() {
+  function encriseSlideIndex() {
     setServiceSlideIndex(serviceSlide + 1);
+  }
+
+  function renderAboutComponentCaseHave(): React.ReactNode {
+    var finding = aboutmeData.aboutData.find(
+      a => a.Id === aboutmeData.currentId
+    ).ComplementComponent;
+
+    return finding ? finding : <></>;
   }
 
   useEffect(() => {
     dispatch(changeServiceLanguage({ toggleState: toggleState }));
     dispatch(changeSectionLanguage({ toggleState: toggleState }));
     dispatch(changePageTextLanguage({ toggleState: toggleState }));
+    dispatch(changeAboutLanguage({ toggleState: toggleState }));
   }, [toggleState]);
 
   return (
@@ -134,13 +144,13 @@ export const DeveloperPage: React.FC = () => {
           <TitleRegion title={sectionsData[1]} />
           <ButtonSlideGroup>
             {serviceSlide !== 0 && (
-              <div onClick={DecriseSlideIndex}>
+              <div onClick={decriseSlideIndex}>
                 <BiLeftArrowAlt />
               </div>
             )}
 
             {serviceSlide < servicesData.services.length - 3 && (
-              <RightButton onClick={EncriseSlideIndex}>
+              <RightButton onClick={encriseSlideIndex}>
                 <BiRightArrowAlt />
               </RightButton>
             )}
@@ -171,7 +181,26 @@ export const DeveloperPage: React.FC = () => {
 
           <AboutMeSlide>
             <SwipeCarousel data={aboutmeData.aboutData} />
-            <AboutMeText />
+            <AboutMeText>
+              <div>
+                <h3>
+                  {
+                    aboutmeData.aboutData.find(
+                      a => a.Id === aboutmeData.currentId
+                    ).Title
+                  }
+                </h3>
+                <p>
+                  {
+                    aboutmeData.aboutData.find(
+                      a => a.Id === aboutmeData.currentId
+                    ).Text
+                  }
+                </p>
+              </div>
+
+              {renderAboutComponentCaseHave()}
+            </AboutMeText>
           </AboutMeSlide>
         </PageSection>
       </Container>

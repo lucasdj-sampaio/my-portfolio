@@ -177,4 +177,21 @@ export const AboutMeText = styled.div`
   width: 482px;
   box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.4);
   border: 1px solid var(--secundColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 20px 25px 20px;
+  text-align: center;
+
+  h3 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: var(--secundColor);
+  }
+
+  p {
+    font-size: 20px;
+    color: var(--textColor);
+  }
 `;

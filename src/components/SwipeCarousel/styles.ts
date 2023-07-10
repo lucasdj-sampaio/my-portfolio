@@ -16,5 +16,10 @@ export const SwiperStyles = styled.div`
     color: #fff;
     background-color: var(--background);
     border: 1px solid var(--secundColor);
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
   }
 `;

@@ -4,12 +4,16 @@ import 'swiper/css/effect-cards';
 import { EffectCards } from 'swiper/modules';
 import { IAboutDataType } from 'shared/types/IAboutDataType';
 import { SwiperStyles } from './styles';
+import { useDispatch } from 'react-redux';
+import { changeCurrentSlideId } from 'store/slices/aboutme';
 
 interface SwipeProp {
   data: IAboutDataType[];
 }
 
 export const SwipeCarousel: React.FC<SwipeProp> = ({ data }: SwipeProp) => {
+  const dispatch = useDispatch();
+
   return (
     <SwiperStyles>
       <Swiper
@@ -17,6 +21,9 @@ export const SwipeCarousel: React.FC<SwipeProp> = ({ data }: SwipeProp) => {
         grabCursor={true}
         modules={[EffectCards]}
         className="mySwiper"
+        onSlideChange={current =>
+          dispatch(changeCurrentSlideId({ id: current.activeIndex + 1 }))
+        }
       >
         {data.map(currentData => {
           return (
