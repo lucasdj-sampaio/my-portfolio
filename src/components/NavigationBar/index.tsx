@@ -21,14 +21,14 @@ export const NavigationBar: React.FC<NavigationProps> = ({
 
   const handleScroll = () => {
     setScrollPosition(window.scrollY >= 340);
-  }
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [])
+  }, []);
 
   return (
     <Bar scrooled={scrollPage}>
