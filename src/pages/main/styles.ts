@@ -181,17 +181,18 @@ export const AboutMeText = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 20px 20px 25px 20px;
-  text-align: center;
 
   h3 {
-    font-size: 28px;
+    text-align: center;
+    font-size: 25px;
     font-weight: 500;
     margin-bottom: 25px;
     color: var(--secundColor);
   }
 
   p {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--textColor);
+    font-weight: 100;
   }
 `;
