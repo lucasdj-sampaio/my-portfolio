@@ -15,6 +15,10 @@ export const BackgroundContainer = styled.div<FileProps>`
 export const Container = styled.div`
   max-width: 1124px;
   margin: 0 auto;
+
+  @media (max-width: 1121px) {
+    margin: 20px;
+  }
 `;
 
 export const ApresentationContent = styled.div`
@@ -70,6 +74,11 @@ export const HrDivisor = styled.div`
 export const WorkSection = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 1121px) {
+    grid-template-columns: max-content 1fr;
+    column-gap: 30px;
+  }
 `;
 
 export const WorkImageDiv = styled.div`
@@ -94,6 +103,16 @@ export const WorkImageDiv = styled.div`
 
     :hover {
       transform: translateY(6px) translateX(6px);
+    }
+  }
+
+  @media (max-width: 1121px) {
+    width: 350px;
+    height: 350px;
+
+    img {
+      width: 370px;
+      height: 370px;
     }
   }
 `;
@@ -121,6 +140,7 @@ export const ServicesDivision = styled.div`
 export const ButtonSlideGroup = styled.div`
   display: flex;
   position: absolute;
+  max-width: 1124px;
   width: 1124px;
   top: 41%;
   padding: 0 2px;
@@ -149,6 +169,10 @@ export const ButtonSlideGroup = styled.div`
     :hover {
       color: var(--secundColor);
     }
+  }
+
+  @media (max-width: 1121px) {
+    width: 95.1vw;
   }
 `;
 
