@@ -35,6 +35,7 @@ import { changeSectionLanguage } from 'store/slices/sections';
 import { changePageTextLanguage } from 'store/slices/otherTextTranslate';
 import { SwipeCarousel } from 'components/SwipeCarousel';
 import { changeAboutLanguage } from 'store/slices/aboutme';
+import { SeeMoreComponent } from 'components/atoms/SeeMore';
 
 export const DeveloperPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -69,9 +70,9 @@ export const DeveloperPage: React.FC = () => {
   function renderAboutComponentCaseHave(): React.ReactNode {
     var finding = aboutmeData.aboutData.find(
       a => a.Id === aboutmeData.currentId
-    ).ComplementComponent;
+    ).ComplementLink;
 
-    return finding ? finding : <></>;
+    return finding ? <SeeMoreComponent link={finding} /> : <></>;
   }
 
   useEffect(() => {
@@ -198,7 +199,6 @@ export const DeveloperPage: React.FC = () => {
                   }
                 </p>
               </div>
-
               {renderAboutComponentCaseHave()}
             </AboutMeText>
           </AboutMeSlide>

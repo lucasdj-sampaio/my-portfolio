@@ -1,3 +1,4 @@
+import { SeeMoreComponent } from 'components/atoms/SeeMore';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IAboutDataType } from 'shared/types/IAboutDataType';
 //@ts-ignore
@@ -8,6 +9,7 @@ import CertificationImage from '../../images/certification_aboutme.jpeg';
 import CvPt from '../../images/cv_pt.png';
 //@ts-ignore
 import CvEn from '../../images/cv_en.png';
+import { link } from 'fs';
 
 interface AboutProp {
   aboutData: IAboutDataType[];
@@ -33,10 +35,27 @@ const initialENState: AboutProp = {
     {
       Id: 2,
       Image: CertificationImage,
-      Title: '321',
-      Text: 'czczxczxczxczcxzc',
+      Title: 'Cursos e Certificações',
+      Text: `Period of study and courses:
+        ETEC - 2018 to 2019: Fundamentals of IT course, learning HTML, CSS, C#, Java, Python, and other technologies.
+        SKILL IDIOMAS - 2016 to 2019: English course, from basic to intermediate level, developing skills in writing, 
+        conversation, and reading.
+        FIAP - 2020 to 2022: Analysis and Systems Development course to deepen knowledge in technology.
+        Certifications:
+        
+        C#: Advanced knowledge in .NET.
+        REACT: I hold certifications from Alura, focused on JavaScript and React development.`,
+      ComplementLink:
+        'https://drive.google.com/drive/folders/1BhNlF67fwYeRLH1u-8N5NgsYGVQ8Svyr',
     },
-    { Id: 3, Image: CvEn, Title: 'CV', Text: 'dasddas' },
+    {
+      Id: 3,
+      Image: CvEn,
+      Title: 'Resume',
+      Text: 'Get to know my career in detail through the link below, where you will find my complete resume',
+      ComplementLink:
+        'https://drive.google.com/file/d/15ZlbkL93Fq-Kav2olNCGlOdj5Uxz96Hg/view?usp=drive_link',
+    },
   ],
   currentId: 1,
 };
@@ -61,10 +80,27 @@ const initialPTState: AboutProp = {
     {
       Id: 2,
       Image: CertificationImage,
-      Title: '23123',
-      Text: 'dsadadsa',
+      Title: 'Cursos e Certificações',
+      Text: `Período de estudo e cursos:
+        - ETEC - 2018 a 2019: Curso de fundamentos de TI, aprendendo HTML, CSS, C#, Java, Python e outras tecnologias.
+        - SKILL IDIOMAS - 2016 a 2019: Curso de inglês, do nível básico ao intermediário, desenvolvendo habilidades 
+        de escrita, conversação e leitura.
+        - FIAP - 2020 a 2022: Curso de análise e desenvolvimento de sistemas para aprofundar conhecimentos em tecnologia.
+        
+        Certificações:
+        - C#: Conhecimentos avançados em .NET.
+        - REACT: Possuo certificações da Alura, focadas no desenvolvimento de JavaScript e React.`,
+      ComplementLink:
+        'https://drive.google.com/drive/folders/1BhNlF67fwYeRLH1u-8N5NgsYGVQ8Svyr',
     },
-    { Id: 3, Image: CvPt, Title: 'CV', Text: 'dasddas' },
+    {
+      Id: 3,
+      Image: CvPt,
+      Title: 'Currículo ',
+      Text: 'Conheça minha carreira em detalhes através do link abaixo, onde você encontrará meu currículo completo',
+      ComplementLink:
+        'https://drive.google.com/file/d/1E_LoVzI6xVlXnABTOqlldbHCrRkZGD8X/view?usp=sharing',
+    },
   ],
   currentId: 1,
 };

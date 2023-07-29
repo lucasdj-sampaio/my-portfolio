@@ -6,6 +6,7 @@ import { IAboutDataType } from 'shared/types/IAboutDataType';
 import { SwiperStyles } from './styles';
 import { useDispatch } from 'react-redux';
 import { changeCurrentSlideId } from 'store/slices/aboutme';
+import { useEffect } from 'react';
 
 interface SwipeProp {
   data: IAboutDataType[];
@@ -13,6 +14,10 @@ interface SwipeProp {
 
 export const SwipeCarousel: React.FC<SwipeProp> = ({ data }: SwipeProp) => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(changeCurrentSlideId({ id: 1 }));
+  }, []);
 
   return (
     <SwiperStyles>

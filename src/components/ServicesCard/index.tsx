@@ -1,6 +1,6 @@
 import { IServiceCardProp } from 'shared/types/IServiceCardProp';
-import { AiOutlineArrowRight } from 'react-icons/ai';
 import { StyledCard, StyledCardContent, StyledImage } from './styles';
+import { SeeMoreComponent } from 'components/atoms/SeeMore';
 
 export const ServicesCard: React.FC<IServiceCardProp> = ({
   Image,
@@ -18,10 +18,7 @@ export const ServicesCard: React.FC<IServiceCardProp> = ({
           <h3>{Title}</h3>
           <p>{Description}</p>
         </div>
-
-        <a href={SeeMore.Link} target="_blank" rel="noreferrer">
-          See more <AiOutlineArrowRight />
-        </a>
+        <SeeMoreComponent link={SeeMore.Link} disabled={SeeMore.Private} />
       </StyledCardContent>
     </StyledCard>
   );

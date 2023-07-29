@@ -3,5 +3,5 @@ export interface IAboutDataType {
   Image: any;
   Title: string;
   Text: string;
-  ComplementComponent?: ReactNode;
+  ComplementLink?: string;
 }
