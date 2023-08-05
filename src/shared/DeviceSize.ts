@@ -1,5 +1,5 @@
 export const Size = {
-  Mobile: 320,
+  Mobile: 414,
   TabletS: 576,
   Tablet: 768,
   LaptopS: 992,

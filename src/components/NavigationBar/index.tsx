@@ -35,10 +35,7 @@ export const NavigationBar: React.FC<NavigationProps> = ({
   return (
     <Bar scrooled={scrollPage}>
       <UserPhoto>
-        <img
-          alt="profile"
-          src={`${process.env.REACT_APP_GIT_URL}.png?size=45`}
-        />
+        <img alt="profile" src={`${process.env.REACT_APP_GIT_URL}.png`} />
         <label>Sampaio</label>
       </UserPhoto>
 

@@ -1,10 +1,6 @@
 import DeviceSize from 'shared/DeviceSize';
 import styled, { css } from 'styled-components';
 
-interface DisabledSeeMore {
-  disable?: boolean;
-}
-
 interface TopSpacementProp {
   TopSpacement?: boolean;
 }
@@ -28,7 +24,7 @@ export const StyledCard = styled.div<TopSpacementProp>`
     return '';
   }}
 
-  @media ${DeviceSize.TabletS} {
+  @media ${DeviceSize.Tablet} {
     transform: translateY(0px);
   }
 `;
@@ -37,7 +33,7 @@ export const StyledImage = styled.img`
   width: 100%;
 `;
 
-export const StyledCardContent = styled.div<DisabledSeeMore>`
+export const StyledCardContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -63,6 +59,12 @@ export const StyledCardContent = styled.div<DisabledSeeMore>`
       margin-bottom: 13px;
     }
 
+    p {
+      font-size: 12px;
+    }
+  }
+
+  @media ${DeviceSize.LaptopS} {
     p {
       font-size: 10px;
     }
