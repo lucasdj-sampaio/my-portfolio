@@ -1,3 +1,4 @@
+import DeviceSize from 'shared/DeviceSize';
 import styled, { css } from 'styled-components';
 
 interface DisabledSeeMore {
@@ -28,4 +29,12 @@ export const SeeMoreStyled = styled.a<DisabledSeeMore>`
 
     return '';
   }}
+
+  @media ${DeviceSize.Tablet} {
+    font-size: 9px;
+  }
+
+  @media ${DeviceSize.TabletS} {
+    font-size: 12px;
+  }
 `;

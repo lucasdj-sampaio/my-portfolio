@@ -3,6 +3,8 @@ import { SetStateAction, useEffect, useState } from 'react';
 import { Bar, NavItems, UserPhoto } from './styles';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
+import { windowSizeIsBigestThen } from 'Util/WindowSize';
+import { Size } from 'shared/DeviceSize';
 
 interface NavigationProps {
   toggleState: boolean;
@@ -42,13 +44,14 @@ export const NavigationBar: React.FC<NavigationProps> = ({
 
       <nav>
         <NavItems>
-          {sectionsData.map((data, i) => {
-            return (
-              <li key={`section_${i}`}>
-                <a href={`#section_${data.toLowerCase()}`}>{data}</a>
-              </li>
-            );
-          })}
+          {windowSizeIsBigestThen(Size.TabletS) &&
+            sectionsData.map((data, i) => {
+              return (
+                <li key={`section_${i}`}>
+                  <a href={`#section_${data.toLowerCase()}`}>{data}</a>
+                </li>
+              );
+            })}
 
           <Toggle
             firstOption="EN"

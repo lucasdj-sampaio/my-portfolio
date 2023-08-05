@@ -1,3 +1,4 @@
+import DeviceSize from 'shared/DeviceSize';
 import styled from 'styled-components';
 
 interface FileProps {
@@ -16,7 +17,7 @@ export const Container = styled.div`
   max-width: 1124px;
   margin: 0 auto;
 
-  @media (max-width: 1121px) {
+  @media ${DeviceSize.LaptopS} {
     margin: 20px;
   }
 `;
@@ -59,6 +60,16 @@ export const SkillContent = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 32px 68px;
   padding: 0 30px;
+
+  @media ${DeviceSize.Tablet} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media ${DeviceSize.TabletS} {
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+  }
 `;
 
 export const HrDivisor = styled.div`
@@ -69,15 +80,27 @@ export const HrDivisor = styled.div`
     width: 800px;
     border-width: 0.5px;
   }
+
+  @media ${DeviceSize.TabletS} {
+    hr {
+      width: 100%;
+    }
+  }
 `;
 
 export const WorkSection = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  @media (max-width: 1121px) {
+  @media ${DeviceSize.LaptopS} {
     grid-template-columns: max-content 1fr;
     column-gap: 30px;
+  }
+
+  @media ${DeviceSize.Tablet} {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+    justify-items: center;
   }
 `;
 
@@ -106,13 +129,23 @@ export const WorkImageDiv = styled.div`
     }
   }
 
-  @media (max-width: 1121px) {
+  @media ${DeviceSize.LaptopS} {
     width: 350px;
     height: 350px;
 
     img {
       width: 370px;
       height: 370px;
+    }
+  }
+
+  @media ${DeviceSize.TabletS} {
+    width: 250px;
+    height: 250px;
+
+    img {
+      width: 270px;
+      height: 270px;
     }
   }
 `;
@@ -128,6 +161,14 @@ export const WorkContent = styled.div`
   p {
     color: var(--textColor);
     line-height: 25px;
+  }
+
+  @media ${DeviceSize.Tablet} {
+    h2,
+    p {
+      width: 100%;
+      text-align: center;
+    }
   }
 `;
 
@@ -171,8 +212,17 @@ export const ButtonSlideGroup = styled.div`
     }
   }
 
-  @media (max-width: 1121px) {
+  @media ${DeviceSize.LaptopS} {
     width: 95.1vw;
+  }
+
+  @media ${DeviceSize.Tablet} {
+    top: 33%;
+    width: 93.1vw;
+  }
+
+  @media ${DeviceSize.TabletS} {
+    width: 90.1vw;
   }
 `;
 
@@ -186,19 +236,33 @@ export const ServiceSlide = styled.div`
   grid-template-columns: repeat(3, 1fr);
   column-gap: 30px;
   margin-top: 30px;
+
+  @media ${DeviceSize.TabletS} {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const AboutMeSlide = styled.div`
   margin-top: 39px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  column-gap: 90px;
+
+  @media ${DeviceSize.LaptopS} {
+    column-gap: 50px;
+  }
+
+  @media ${DeviceSize.TabletS} {
+    flex-direction: column;
+    row-gap: 30px;
+  }
 `;
 
 export const AboutMeText = styled.div`
   border-radius: 20px;
   height: 562px;
-  width: 482px;
+  width: 430px;
   box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.4);
   border: 1px solid var(--secundColor);
   display: flex;
@@ -215,8 +279,40 @@ export const AboutMeText = styled.div`
   }
 
   p {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 21px;
     color: var(--textColor);
     font-weight: 100;
+  }
+
+  @media ${DeviceSize.LaptopS} {
+    p {
+      font-size: 13px;
+      line-height: 17px;
+    }
+  }
+
+  @media ${DeviceSize.Tablet} {
+    height: 462px;
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  @media ${DeviceSize.TabletS} {
+    height: max-content;
+    width: 320px;
+
+    p {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 17px;
+    }
   }
 `;

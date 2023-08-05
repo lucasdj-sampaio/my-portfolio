@@ -1,4 +1,5 @@
-import styled, { css, keyframes } from 'styled-components';
+import DeviceSize from 'shared/DeviceSize';
+import styled, { css } from 'styled-components';
 
 interface DisabledSeeMore {
   disable?: boolean;
@@ -26,6 +27,10 @@ export const StyledCard = styled.div<TopSpacementProp>`
 
     return '';
   }}
+
+  @media ${DeviceSize.TabletS} {
+    transform: translateY(0px);
+  }
 `;
 
 export const StyledImage = styled.img`
@@ -48,5 +53,18 @@ export const StyledCardContent = styled.div<DisabledSeeMore>`
 
   p {
     font-size: 12px;
+  }
+
+  @media ${DeviceSize.Tablet} {
+    padding: 10px 10px 15px 10px;
+
+    h3 {
+      font-size: 12px;
+      margin-bottom: 13px;
+    }
+
+    p {
+      font-size: 10px;
+    }
   }
 `;

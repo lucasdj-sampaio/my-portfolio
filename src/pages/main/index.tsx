@@ -36,6 +36,8 @@ import { changePageTextLanguage } from 'store/slices/otherTextTranslate';
 import { SwipeCarousel } from 'components/SwipeCarousel';
 import { changeAboutLanguage } from 'store/slices/aboutme';
 import { SeeMoreComponent } from 'components/atoms/SeeMore';
+import DeviceSize, { Size } from 'shared/DeviceSize';
+import { getCountByWinWidth } from 'Util/WindowSize';
 
 export const DeveloperPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -55,9 +57,12 @@ export const DeveloperPage: React.FC = () => {
   const servicesData = useSelector((state: RootState) => state.serviceSlice);
 
   const [serviceSlide, setServiceSlideIndex] = useState<number>(0);
+  const [countByWindow, setCountWindow] = useState<number>(
+    getCountByWinWidth()
+  );
 
   const servicesListRange = () =>
-    servicesData.services.slice(serviceSlide, serviceSlide + 3);
+    servicesData.services.slice(serviceSlide, serviceSlide + countByWindow);
 
   function decriseSlideIndex() {
     setServiceSlideIndex(serviceSlide - 1);
@@ -74,6 +79,18 @@ export const DeveloperPage: React.FC = () => {
 
     return finding ? <SeeMoreComponent link={finding} /> : <></>;
   }
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setCountWindow(getCountByWinWidth());
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  });
 
   useEffect(() => {
     dispatch(changeServiceLanguage({ toggleState: toggleState }));
