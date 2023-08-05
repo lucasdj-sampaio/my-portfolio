@@ -8,11 +8,11 @@ import {
   ApresentationContent,
   ApresentationName,
   BackgroundContainer,
+  ButtonPostion,
   ButtonSlideGroup,
   Container,
   HrDivisor,
   PageSection,
-  RightButton,
   ServiceSlide,
   ServicesDivision,
   SkillContent,
@@ -161,19 +161,22 @@ export const DeveloperPage: React.FC = () => {
       <ServicesDivision id={`section_${sectionsData[1].toLowerCase()}`}>
         <Container>
           <TitleRegion title={sectionsData[1]} />
-          <ButtonSlideGroup>
-            {serviceSlide !== 0 && (
-              <div onClick={decriseSlideIndex}>
-                <BiLeftArrowAlt />
-              </div>
-            )}
+          <ButtonPostion>
+            <ButtonSlideGroup hasButton={serviceSlide !== 0}>
+              {serviceSlide !== 0 && (
+                <div onClick={decriseSlideIndex}>
+                  <BiLeftArrowAlt />
+                </div>
+              )}
 
-            {serviceSlide < servicesData.services.length - countByWindow && (
-              <RightButton onClick={encriseSlideIndex}>
-                <BiRightArrowAlt />
-              </RightButton>
-            )}
-          </ButtonSlideGroup>
+              {serviceSlide < servicesData.services.length - countByWindow && (
+                <div onClick={encriseSlideIndex}>
+                  <BiRightArrowAlt />
+                </div>
+              )}
+            </ButtonSlideGroup>
+          </ButtonPostion>
+
           <ServiceSlide>
             {servicesListRange().map((data, i) => {
               return (

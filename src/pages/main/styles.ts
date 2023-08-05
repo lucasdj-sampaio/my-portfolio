@@ -5,6 +5,10 @@ interface FileProps {
   fileName: string;
 }
 
+interface LeftButtonProps {
+  hasButton: boolean;
+}
+
 export const BackgroundContainer = styled.div<FileProps>`
   width: 100vw;
   background-image: url(${p => p.fileName});
@@ -178,20 +182,24 @@ export const ServicesDivision = styled.div`
   padding: 25px 0 80px 0;
 `;
 
-export const ButtonSlideGroup = styled.div`
+export const ButtonPostion = styled.div`
+  position: relative;
+`;
+
+export const ButtonSlideGroup = styled.div<LeftButtonProps>`
   display: flex;
-  position: absolute;
-  max-width: 1124px;
-  width: 1124px;
-  top: 41%;
+  justify-content: ${p => (p.hasButton ? 'space-between' : 'end')};
   padding: 0 2px;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  top: 189px;
 
   div {
     background: rgba(255, 255, 255, 0.38);
     border-radius: 50%;
     align-items: center;
     display: flex;
-    z-index: 1;
     transition: 0.5s;
     height: 42px;
     width: 42px;
@@ -211,26 +219,6 @@ export const ButtonSlideGroup = styled.div`
       color: var(--secundColor);
     }
   }
-
-  @media ${DeviceSize.LaptopS} {
-    width: 94.1vw;
-    top: 37%;
-  }
-
-  @media ${DeviceSize.Tablet} {
-    top: 40%;
-    width: 93.1vw;
-  }
-
-  @media ${DeviceSize.TabletS} {
-    width: 95.1vw;
-    top: 36%;
-  }
-`;
-
-export const RightButton = styled.div`
-  position: absolute;
-  right: 3px;
 `;
 
 export const ServiceSlide = styled.div`
