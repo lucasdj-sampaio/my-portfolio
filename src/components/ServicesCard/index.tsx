@@ -13,7 +13,7 @@ export const ServicesCard: React.FC<IServiceCardProp> = ({
     <StyledCard TopSpacement={TopSpacement}>
       <StyledImage src={Image} alt="Service image" />
 
-      <StyledCardContent disable={SeeMore.Private}>
+      <StyledCardContent>
         <div>
           <h3>{Title}</h3>
           <p>{Description}</p>

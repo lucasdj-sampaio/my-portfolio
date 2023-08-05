@@ -82,6 +82,7 @@ export const DeveloperPage: React.FC = () => {
 
   useEffect(() => {
     const handleWindowResize = () => {
+      setServiceSlideIndex(0);
       setCountWindow(getCountByWinWidth());
     };
 
@@ -167,7 +168,7 @@ export const DeveloperPage: React.FC = () => {
               </div>
             )}
 
-            {serviceSlide < servicesData.services.length - 3 && (
+            {serviceSlide < servicesData.services.length - countByWindow && (
               <RightButton onClick={encriseSlideIndex}>
                 <BiRightArrowAlt />
               </RightButton>

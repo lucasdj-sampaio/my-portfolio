@@ -30,11 +30,11 @@ export const SeeMoreStyled = styled.a<DisabledSeeMore>`
     return '';
   }}
 
-  @media ${DeviceSize.Tablet} {
-    font-size: 9px;
-  }
-
   @media ${DeviceSize.TabletS} {
     font-size: 12px;
+  }
+
+  @media ${DeviceSize.LaptopS} {
+    font-size: 10px;
   }
 `;

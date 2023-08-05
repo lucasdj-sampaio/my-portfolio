@@ -10,10 +10,14 @@ export const SeeMoreComponent: React.FC<SeeProps> = ({
   link,
   disabled,
 }: SeeProps) => {
+  const ableHref = {
+    href: link,
+  };
+
   return (
     <SeeMoreStyled
       disable={disabled}
-      href={disabled && link}
+      {...(disabled && ableHref)}
       target="_blank"
       rel="noreferrer"
     >

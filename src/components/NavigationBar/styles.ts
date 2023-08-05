@@ -1,3 +1,4 @@
+import DeviceSize from 'shared/DeviceSize';
 import styled from 'styled-components';
 
 interface BarColorProp {
@@ -5,7 +6,7 @@ interface BarColorProp {
 }
 
 export const Bar = styled.div<BarColorProp>`
-  background-color: ${p => p.scrooled ? 'var(--background)' : 'transparent'};
+  background-color: ${p => (p.scrooled ? 'var(--background)' : 'transparent')};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +16,8 @@ export const Bar = styled.div<BarColorProp>`
   left: 0;
   padding: 5px 50px;
   z-index: 2;
-  box-shadow: ${p => p.scrooled ? '0 2px 2px 2px rgba(0,0,0,0.4)' : 'transparent'};
+  box-shadow: ${p =>
+    p.scrooled ? '0 2px 2px 2px rgba(0,0,0,0.4)' : 'transparent'};
 
   label {
     color: var(--textColor);
@@ -30,8 +32,19 @@ export const UserPhoto = styled.div`
   justify-content: space-around;
 
   img {
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 45px;
+  }
+
+  @media ${DeviceSize.TabletS} {
+    img {
+      width: 38px;
+    }
+  }
+
+  @media ${DeviceSize.Mobile} {
+    img {
+      width: 33px;
+    }
   }
 `;
 

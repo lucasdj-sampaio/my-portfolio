@@ -213,16 +213,18 @@ export const ButtonSlideGroup = styled.div`
   }
 
   @media ${DeviceSize.LaptopS} {
-    width: 95.1vw;
+    width: 94.1vw;
+    top: 37%;
   }
 
   @media ${DeviceSize.Tablet} {
-    top: 33%;
+    top: 40%;
     width: 93.1vw;
   }
 
   @media ${DeviceSize.TabletS} {
-    width: 90.1vw;
+    width: 95.1vw;
+    top: 36%;
   }
 `;
 
@@ -237,8 +239,13 @@ export const ServiceSlide = styled.div`
   column-gap: 30px;
   margin-top: 30px;
 
-  @media ${DeviceSize.TabletS} {
+  @media ${DeviceSize.Tablet} {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media ${DeviceSize.TabletS} {
+    grid-template-columns: 300px;
+    justify-content: center;
   }
 `;
 
@@ -253,7 +260,7 @@ export const AboutMeSlide = styled.div`
     column-gap: 50px;
   }
 
-  @media ${DeviceSize.TabletS} {
+  @media ${DeviceSize.Tablet} {
     flex-direction: column;
     row-gap: 30px;
   }
@@ -305,7 +312,7 @@ export const AboutMeText = styled.div`
     }
   }
 
-  @media ${DeviceSize.TabletS} {
+  @media ${DeviceSize.Tablet} {
     height: max-content;
     width: 320px;
 
