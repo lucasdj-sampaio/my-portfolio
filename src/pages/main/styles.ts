@@ -9,6 +9,10 @@ interface LeftButtonProps {
   hasButton: boolean;
 }
 
+export const OverFlowHidden = styled.div`
+  overflow-x: hidden;
+`;
+
 export const BackgroundContainer = styled.div<FileProps>`
   width: 100vw;
   background-image: url(${p => p.fileName});
@@ -190,10 +194,9 @@ export const ButtonSlideGroup = styled.div<LeftButtonProps>`
   display: flex;
   justify-content: ${p => (p.hasButton ? 'space-between' : 'end')};
   padding: 0 2px;
-  z-index: 1;
   position: absolute;
   width: 100%;
-  top: 189px;
+  top: 160px;
 
   div {
     background: rgba(255, 255, 255, 0.38);
@@ -201,6 +204,7 @@ export const ButtonSlideGroup = styled.div<LeftButtonProps>`
     align-items: center;
     display: flex;
     transition: 0.5s;
+    z-index: 1;
     height: 42px;
     width: 42px;
 
@@ -218,6 +222,14 @@ export const ButtonSlideGroup = styled.div<LeftButtonProps>`
     :hover {
       color: var(--secundColor);
     }
+  }
+
+  @media ${DeviceSize.LaptopS} {
+    top: 116px;
+  }
+
+  @media ${DeviceSize.Tablet} {
+    top: 133px;
   }
 `;
 
