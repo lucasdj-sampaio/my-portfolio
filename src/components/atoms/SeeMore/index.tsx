@@ -4,11 +4,13 @@ import { SeeMoreStyled } from './styles';
 interface SeeProps {
   link: string;
   disabled?: boolean;
+  en?: boolean;
 }
 
 export const SeeMoreComponent: React.FC<SeeProps> = ({
   link,
   disabled,
+  en,
 }: SeeProps) => {
   const ableHref = {
     href: link,
@@ -21,11 +23,12 @@ export const SeeMoreComponent: React.FC<SeeProps> = ({
       target="_blank"
       rel="noreferrer"
     >
-      See more <AiOutlineArrowRight />
+      {en ? 'See more' : 'Ver mais'} <AiOutlineArrowRight />
     </SeeMoreStyled>
   );
 };
 
 SeeMoreComponent.defaultProps = {
   disabled: true,
+  en: true,
 };

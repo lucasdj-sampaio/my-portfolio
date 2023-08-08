@@ -8,15 +8,16 @@ import {
   ApresentationContent,
   ApresentationName,
   BackgroundContainer,
+  ButtonPostion,
   ButtonSlideGroup,
   Container,
   HrDivisor,
   PageSection,
-  RightButton,
   ServiceSlide,
   ServicesDivision,
   SkillContent,
   SocialMediaStyles,
+  OverFlowHidden,
   WorkContent,
   WorkImageDiv,
   WorkSection,
@@ -36,7 +37,6 @@ import { changePageTextLanguage } from 'store/slices/otherTextTranslate';
 import { SwipeCarousel } from 'components/SwipeCarousel';
 import { changeAboutLanguage } from 'store/slices/aboutme';
 import { SeeMoreComponent } from 'components/atoms/SeeMore';
-import DeviceSize, { Size } from 'shared/DeviceSize';
 import { getCountByWinWidth } from 'Util/WindowSize';
 
 export const DeveloperPage: React.FC = () => {
@@ -77,13 +77,20 @@ export const DeveloperPage: React.FC = () => {
       a => a.Id === aboutmeData.currentId
     ).ComplementLink;
 
-    return finding ? <SeeMoreComponent link={finding} /> : <></>;
+    return finding ? (
+      <SeeMoreComponent link={finding} en={toggleState} />
+    ) : (
+      <></>
+    );
   }
 
   useEffect(() => {
     const handleWindowResize = () => {
-      setServiceSlideIndex(0);
       setCountWindow(getCountByWinWidth());
+
+      if (serviceSlide >= servicesData.services.length - 2) {
+        setServiceSlideIndex(serviceSlide - countByWindow);
+      }
     };
 
     window.addEventListener('resize', handleWindowResize);
@@ -101,7 +108,7 @@ export const DeveloperPage: React.FC = () => {
   }, [toggleState]);
 
   return (
-    <>
+    <OverFlowHidden>
       <BackgroundContainer fileName={BackgroundImage}>
         <Container>
           <ApresentationContent>
@@ -161,31 +168,38 @@ export const DeveloperPage: React.FC = () => {
       <ServicesDivision id={`section_${sectionsData[1].toLowerCase()}`}>
         <Container>
           <TitleRegion title={sectionsData[1]} />
-          <ButtonSlideGroup>
-            {serviceSlide !== 0 && (
-              <div onClick={decriseSlideIndex}>
-                <BiLeftArrowAlt />
-              </div>
-            )}
+          <ButtonPostion>
+            <ButtonSlideGroup hasButton={serviceSlide !== 0}>
+              {serviceSlide !== 0 && (
+                <div onClick={decriseSlideIndex}>
+                  <BiLeftArrowAlt />
+                </div>
+              )}
 
-            {serviceSlide < servicesData.services.length - countByWindow && (
-              <RightButton onClick={encriseSlideIndex}>
-                <BiRightArrowAlt />
-              </RightButton>
-            )}
-          </ButtonSlideGroup>
+              {serviceSlide < servicesData.services.length - countByWindow && (
+                <div onClick={encriseSlideIndex}>
+                  <BiRightArrowAlt />
+                </div>
+              )}
+            </ButtonSlideGroup>
+          </ButtonPostion>
+
           <ServiceSlide>
             {servicesListRange().map((data, i) => {
+              const service = {
+                Image: data.Image,
+                Title: data.Title,
+                Description: data.Description,
+                TopSpacement: i % 2 === 0 ? false : true,
+                SeeMore: {
+                  Private: data.SeeMore.Private,
+                  Link: data.SeeMore.Link,
+                },
+              };
               return (
                 <ServicesCard
-                  Image={data.Image}
-                  Title={data.Title}
-                  Description={data.Description}
-                  SeeMore={{
-                    Private: data.SeeMore.Private,
-                    Link: data.SeeMore.Link,
-                  }}
-                  TopSpacement={i % 2 === 0 ? false : true}
+                  service={service}
+                  pageLanguage={toggleState}
                   key={`serviceCard_${data}_${i}`}
                 />
               );
@@ -222,6 +236,6 @@ export const DeveloperPage: React.FC = () => {
           </AboutMeSlide>
         </PageSection>
       </Container>
-    </>
+    </OverFlowHidden>
   );
 };
