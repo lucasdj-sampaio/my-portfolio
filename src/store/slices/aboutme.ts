@@ -22,14 +22,14 @@ const initialENState: AboutProp = {
       Id: 1,
       Image: AboutMeImage,
       Title: '< Me />',
-      Text: `I am extremely demanding with myself and strive to accomplish all my tasks with the highest level of 
-        excellence possible. My journey in the world of technology began in 2019, through etec, and thanks to this 
+      Text: `I am extremely demanding with myself and strive to accomplish all my tasks with the highest level of
+        excellence possible. My journey in the world of technology began in 2019, through etec, and thanks to this
         first contact, I was able to develop and evolve to reach where I am today.
-        Speaking of technology, I love being a developer facing challenging requirements that make me feel proud 
-        and satisfied upon completion. I believe that this pursuit of satisfaction and embracing new challenges has 
-        been growing in me since childhood when I had my first encounters with technology, especially through games 
+        Speaking of technology, I love being a developer facing challenging requirements that make me feel proud
+        and satisfied upon completion. I believe that this pursuit of satisfaction and embracing new challenges has
+        been growing in me since childhood when I had my first encounters with technology, especially through games
         that taught me to embrace the desire to overcome increasingly difficult levels.
-        Going deeper into myself, I enjoy spending time with friends and family, riding a motorcycle around, 
+        Going deeper into myself, I enjoy spending time with friends and family, riding a motorcycle around,
         exercising, and especially going out to eat with good company. So, now you know a little more about me!`,
     },
     {
@@ -37,13 +37,18 @@ const initialENState: AboutProp = {
       Image: CertificationImage,
       Title: 'Cursos e Certificações',
       Text: `Period of study and courses:
+        <br><br>
         ETEC - 2018 to 2019: Fundamentals of IT course, learning HTML, CSS, C#, Java, Python, and other technologies.
-        SKILL IDIOMAS - 2016 to 2019: English course, from basic to intermediate level, developing skills in writing, 
+        <br><br>
+        SKILL IDIOMAS - 2016 to 2019: English course, from basic to intermediate level, developing skills in writing,
         conversation, and reading.
+        <br><br>
         FIAP - 2020 to 2022: Analysis and Systems Development course to deepen knowledge in technology.
-        Certifications:
-        
-        C#: Advanced knowledge in .NET.
+        <br><br>
+        Certifications: 
+        <br><br>
+        C#: Advanced knowledge in .NET. 
+        <br><br>
         REACT: I hold certifications from Alura, focused on JavaScript and React development.`,
       ComplementLink:
         'https://drive.google.com/drive/folders/1BhNlF67fwYeRLH1u-8N5NgsYGVQ8Svyr',
@@ -66,15 +71,15 @@ const initialPTState: AboutProp = {
       Id: 1,
       Image: AboutMeImage,
       Title: '<O Lucas />',
-      Text: `Sou uma pessoa extremamente exigente comigo mesmo e busco realizar todas as minhas tarefas com o máximo de 
-        excelência possível. 
-        Minha jornada no mundo da tecnologia começou em 2019, através da etec, e graças a esse primeiro contato, pude me desenvolver e 
-        evoluir até alcançar o ponto em que estou atualmente. 
+      Text: `Sou uma pessoa extremamente exigente comigo mesmo e busco realizar todas as minhas tarefas com o máximo de
+        excelência possível.
+        Minha jornada no mundo da tecnologia começou em 2019, através da etec, e graças a esse primeiro contato, pude me desenvolver e
+        evoluir até alcançar o ponto em que estou atualmente.
         E falando em tecnologia, amo desenvolvedor requisitos desafiadores que me fazem se sentir orgulho e satisfeito pelo feito. 
-        Acredito que Essa busca por satisfação e por enfrentar novos desafios vem crescendo em mim desde a infância, quando tive 
-        meus primeiros contatos com a tecnologia, especialmente através dos jogos, que me ensinaram a abraçar o anseio de superar 
-        fases cada vez mais difíceis. 
-        Falando mais a fundo sobre mim, amo passar meu tempo com amigos e familiares, andar de moto por ai, me exercitar e 
+        Acredito que Essa busca por satisfação e por enfrentar novos desafios vem crescendo em mim desde a infância, quando tive
+        meus primeiros contatos com a tecnologia, especialmente através dos jogos, que me ensinaram a abraçar o anseio de superar
+        fases cada vez mais difíceis.
+        Falando mais a fundo sobre mim, amo passar meu tempo com amigos e familiares, andar de moto por ai, me exercitar e
         principalmente sair para comer com boas companhias. Enfim, agora você me conhece um pouquinho mais!`,
     },
     {
@@ -82,13 +87,18 @@ const initialPTState: AboutProp = {
       Image: CertificationImage,
       Title: 'Cursos e Certificações',
       Text: `Período de estudo e cursos:
+        <br><br>
         - ETEC - 2018 a 2019: Curso de fundamentos de TI, aprendendo HTML, CSS, C#, Java, Python e outras tecnologias.
-        - SKILL IDIOMAS - 2016 a 2019: Curso de inglês, do nível básico ao intermediário, desenvolvendo habilidades 
+        <br><br>
+        - SKILL IDIOMAS - 2016 a 2019: Curso de inglês, do nível básico ao intermediário, desenvolvendo habilidades
         de escrita, conversação e leitura.
+        <br><br>
         - FIAP - 2020 a 2022: Curso de análise e desenvolvimento de sistemas para aprofundar conhecimentos em tecnologia.
-        
+        <br><br>
         Certificações:
+        <br><br>
         - C#: Conhecimentos avançados em .NET.
+        <br><br>
         - REACT: Possuo certificações da Alura, focadas no desenvolvimento de JavaScript e React.`,
       ComplementLink:
         'https://drive.google.com/drive/folders/1BhNlF67fwYeRLH1u-8N5NgsYGVQ8Svyr',

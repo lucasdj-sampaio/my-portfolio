@@ -224,11 +224,16 @@ export const DeveloperPage: React.FC = () => {
                   }
                 </h3>
                 <p>
-                  {
-                    aboutmeData.aboutData.find(
-                      a => a.Id === aboutmeData.currentId
-                    ).Text
-                  }
+                  {aboutmeData.aboutData
+                    .find(a => a.Id === aboutmeData.currentId)
+                    .Text.split('<br>')
+                    .map(currentText => {
+                      return (
+                        <>
+                          {currentText} <br />
+                        </>
+                      );
+                    })}
                 </p>
               </div>
               {renderAboutComponentCaseHave()}
