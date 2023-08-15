@@ -227,11 +227,11 @@ export const DeveloperPage: React.FC = () => {
                   {aboutmeData.aboutData
                     .find(a => a.Id === aboutmeData.currentId)
                     .Text.split('<br>')
-                    .map(currentText => {
+                    .map((currentText, i) => {
                       return (
-                        <>
+                        <span key={`brSplit_${currentText.length}_${i}`}>
                           {currentText} <br />
-                        </>
+                        </span>
                       );
                     })}
                 </p>

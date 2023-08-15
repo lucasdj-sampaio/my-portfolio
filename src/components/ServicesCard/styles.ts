@@ -66,7 +66,17 @@ export const StyledCardContent = styled.div`
 
   @media ${DeviceSize.LaptopS} {
     p {
-      font-size: 10px;
+      font-size: 10.6px;
+    }
+  }
+
+  @media ${DeviceSize.Mobile} {
+    h3 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 12px;
     }
   }
 `;
