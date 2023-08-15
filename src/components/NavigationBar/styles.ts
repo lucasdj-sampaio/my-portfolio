@@ -24,6 +24,10 @@ export const Bar = styled.div<BarColorProp>`
     font-size: 14px;
     margin-left: 10px;
   }
+
+  @media ${DeviceSize.Mobile} {
+    padding: 8px 50px;
+  }
 `;
 
 export const UserPhoto = styled.div`

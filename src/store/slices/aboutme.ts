@@ -35,7 +35,7 @@ const initialENState: AboutProp = {
     {
       Id: 2,
       Image: CertificationImage,
-      Title: 'Cursos e Certificações',
+      Title: 'Courses and certifications',
       Text: `Period of study and courses:
         <br><br>
         ETEC - 2018 to 2019: Fundamentals of IT course, learning HTML, CSS, C#, Java, Python, and other technologies.
