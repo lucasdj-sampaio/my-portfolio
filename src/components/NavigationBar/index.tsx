@@ -22,7 +22,7 @@ export const NavigationBar: React.FC<NavigationProps> = ({
   const [scrollPage, setScrollPosition] = useState<boolean>(false);
 
   const handleScroll = () => {
-    setScrollPosition(window.scrollY >= 340);
+    setScrollPosition(window.scrollY >= 240);
   };
 
   useEffect(() => {

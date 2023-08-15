@@ -30,17 +30,6 @@ const initialENState: arrayProps = {
       },
     },
     {
-      Image: PassImage,
-      Title: 'Create Random Passwords',
-      Description: `You know that taking care of security is important, right? 
-        but we know how tedious it is to have to change your passwords often. 
-        To solve this I created an automation to create passwords with alexa commands`,
-      SeeMore: {
-        Private: true,
-        Link: 'https://github.com/lucasdj-sampaio/CreateRandomPasswords',
-      },
-    },
-    {
       Image: IngressImage,
       Title: 'Buy Ticket RPA',
       Description: `With the aim of expediting ticket purchases on a platform, I have developed 
@@ -74,6 +63,17 @@ const initialENState: arrayProps = {
       },
     },
     {
+      Image: PassImage,
+      Title: 'Create Random Passwords',
+      Description: `You know that taking care of security is important, right? 
+        but we know how tedious it is to have to change your passwords often. 
+        To solve this I created an automation to create passwords with alexa commands`,
+      SeeMore: {
+        Private: true,
+        Link: 'https://github.com/lucasdj-sampaio/CreateRandomPasswords',
+      },
+    },
+    {
       Image: GitProjects,
       Title: 'This is not everything!',
       Description: `<Thanks for reaching out! If you would like to explore the rest of the projects I have worked on, 
@@ -96,17 +96,6 @@ const initialPTState: arrayProps = {
       SeeMore: {
         Private: true,
         Link: 'https://github.com/lucasdj-sampaio/VPNConnectAutomation',
-      },
-    },
-    {
-      Image: PassImage,
-      Title: 'Criação de Senha Aleatória',
-      Description: `Você sabe que cuidar da segurança é importante, não é? Mas sabemos 
-      o quão tedioso é ter que trocar suas senhas com frequência. Para resolver isso,
-       criei uma automação para gerar senhas usando comandos da Alexa.`,
-      SeeMore: {
-        Private: true,
-        Link: 'https://github.com/lucasdj-sampaio/CreateRandomPasswords',
       },
     },
     {
@@ -140,6 +129,17 @@ const initialPTState: arrayProps = {
       SeeMore: {
         Private: true,
         Link: 'https://github.com/lucasdj-sampaio/ConvertPdfToImg',
+      },
+    },
+    {
+      Image: PassImage,
+      Title: 'Criação de Senha Aleatória',
+      Description: `Você sabe que cuidar da segurança é importante, não é? Mas sabemos 
+      o quão tedioso é ter que trocar suas senhas com frequência. Para resolver isso,
+       criei uma automação para gerar senhas usando comandos da Alexa.`,
+      SeeMore: {
+        Private: true,
+        Link: 'https://github.com/lucasdj-sampaio/CreateRandomPasswords',
       },
     },
     {
