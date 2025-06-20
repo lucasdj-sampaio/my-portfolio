@@ -7,12 +7,12 @@ interface arrayProp {
 
 const initialState: arrayProp = {
   skills: [
-    { Title: 'C#', Porcent: 98, SpanText: 'Sr' },
-    { Title: 'Selenium', Porcent: 95, SpanText: 'Sr' },
+    { Title: 'React', Porcent: 96, SpanText: 'Sr' },
     { Title: 'JavaScript', Porcent: 92, SpanText: 'Sr' },
-    { Title: 'React', Porcent: 89, SpanText: 'Sr' },
-    { Title: 'TypeScript', Porcent: 88, SpanText: 'Sr' },
-    { Title: 'Python', Porcent: 67, SpanText: 'Pl' },
+    { Title: 'TypeScript', Porcent: 87, SpanText: 'Sr' },
+    { Title: 'C#', Porcent: 90, SpanText: 'Sr' },
+    { Title: 'Sql Server', Porcent: 88, SpanText: 'Sr' },
+    { Title: 'Selenium', Porcent: 90, SpanText: 'Sr' },
   ],
 };
 
