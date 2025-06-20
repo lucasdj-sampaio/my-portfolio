@@ -1,6 +1,7 @@
 import { SkillBar } from 'components/atoms/SkillBar';
 import { ReactElement } from 'react';
-import { FaPython, FaReact } from 'react-icons/fa';
+import { BsDatabaseFill } from 'react-icons/bs';
+import { FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
 import { SiCsharp, SiSelenium, SiTypescript } from 'react-icons/si';
 import { ISkillProperty } from 'shared/types/ISkillProperty';
@@ -16,8 +17,8 @@ const getSkillIcon = (Title: string): ReactElement => {
       return <SiCsharp />;
     case 'TypeScript':
       return <SiTypescript />;
-    case 'Python':
-      return <FaPython />;
+    case 'Sql Server':
+      return <BsDatabaseFill />;
     case 'Selenium':
       return <SiSelenium />;
   }

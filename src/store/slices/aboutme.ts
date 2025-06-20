@@ -1,4 +1,3 @@
-import { SeeMoreComponent } from 'components/atoms/SeeMore';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IAboutDataType } from 'shared/types/IAboutDataType';
 //@ts-ignore
@@ -9,7 +8,6 @@ import CertificationImage from '../../images/certification_aboutme.jpeg';
 import CvPt from '../../images/cv_pt.png';
 //@ts-ignore
 import CvEn from '../../images/cv_en.png';
-import { link } from 'fs';
 
 interface AboutProp {
   aboutData: IAboutDataType[];
@@ -59,7 +57,7 @@ const initialENState: AboutProp = {
       Title: 'Resume',
       Text: 'Get to know my career in detail through the link below, where you will find my complete resume',
       ComplementLink:
-        'https://drive.google.com/file/d/15ZlbkL93Fq-Kav2olNCGlOdj5Uxz96Hg/view?usp=drive_link',
+        'https://drive.google.com/file/d/1sQlGXO0iyJ-urrubvp8J9KwJZ3S_CAj5/view?usp=drive_link',
     },
   ],
   currentId: 1,
@@ -109,7 +107,7 @@ const initialPTState: AboutProp = {
       Title: 'Currículo ',
       Text: 'Conheça minha carreira em detalhes através do link abaixo, onde você encontrará meu currículo completo',
       ComplementLink:
-        'https://drive.google.com/file/d/1E_LoVzI6xVlXnABTOqlldbHCrRkZGD8X/view?usp=sharing',
+        'https://drive.google.com/file/d/1aryH-CWoECjQ7-7XxtfYuPaHAzKEvomI/view?usp=drive_link',
     },
   ],
   currentId: 1,
