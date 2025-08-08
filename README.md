@@ -47,4 +47,3 @@ Feel free to send me a invite connection or a message!
 ---
 
 Thanks for visiting! 💙
-Built with ❤️ by Lucas Sampaio.
