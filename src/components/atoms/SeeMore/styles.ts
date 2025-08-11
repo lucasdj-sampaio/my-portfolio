@@ -16,6 +16,9 @@ export const SeeMoreStyled = styled.a<DisabledSeeMore>`
   :focus {
     outline: none;
   }
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   ${({ disable }) => {
     if (disable) {

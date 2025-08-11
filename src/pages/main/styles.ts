@@ -51,6 +51,9 @@ export const ApresentationName = styled.div`
   text-align: end;
   color: var(--textColor);
   font-weight: 500;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   h1 {
     font-size: 40px;

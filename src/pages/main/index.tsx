@@ -1,7 +1,19 @@
-import { NavigationBar } from 'components/NavigationBar';
-import { Skill } from 'components/Skill';
+import { SeeMoreComponent } from 'components/atoms/SeeMore';
 import { SocialMediaIcon } from 'components/atoms/SocialMediaIconLink';
 import { TitleRegion } from 'components/atoms/TitleRegion';
+import { NavigationBar } from 'components/NavigationBar';
+import { ServicesCard } from 'components/ServicesCard';
+import { Skill } from 'components/Skill';
+import { SwipeCarousel } from 'components/SwipeCarousel';
+import { useEffect, useState } from 'react';
+import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'store';
+import { changeAboutLanguage, updateStorage } from 'store/slices/aboutme';
+import { changePageTextLanguage } from 'store/slices/otherTextTranslate';
+import { changeSectionLanguage } from 'store/slices/sections';
+import { changeServiceLanguage } from 'store/slices/services';
+import { getCountByWinWidth } from 'Util/WindowSize';
 import {
   AboutMeSlide,
   AboutMeText,
@@ -12,12 +24,12 @@ import {
   ButtonSlideGroup,
   Container,
   HrDivisor,
+  OverFlowHidden,
   PageSection,
   ServiceSlide,
   ServicesDivision,
   SkillContent,
   SocialMediaStyles,
-  OverFlowHidden,
   WorkContent,
   WorkImageDiv,
   WorkSection,
@@ -26,18 +38,6 @@ import {
 import BackgroundImage from '../../images/background_profile.png';
 //@ts-ignore
 import WorkImage from '../../images/work_picture.jpg';
-import { ServicesCard } from 'components/ServicesCard';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from 'store';
-import { useEffect, useState } from 'react';
-import { changeServiceLanguage } from 'store/slices/services';
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
-import { changeSectionLanguage } from 'store/slices/sections';
-import { changePageTextLanguage } from 'store/slices/otherTextTranslate';
-import { SwipeCarousel } from 'components/SwipeCarousel';
-import { changeAboutLanguage } from 'store/slices/aboutme';
-import { SeeMoreComponent } from 'components/atoms/SeeMore';
-import { getCountByWinWidth } from 'Util/WindowSize';
 
 export const DeveloperPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -85,6 +85,8 @@ export const DeveloperPage: React.FC = () => {
   }
 
   useEffect(() => {
+    dispatch(updateStorage({ toggleState: toggleState }));
+
     const handleWindowResize = () => {
       setCountWindow(getCountByWinWidth());
 

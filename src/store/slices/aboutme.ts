@@ -57,7 +57,7 @@ const initialENState: AboutProp = {
       Title: 'Resume',
       Text: 'Get to know my career in detail through the link below, where you will find my complete resume',
       ComplementLink:
-        'https://drive.google.com/file/d/1sQlGXO0iyJ-urrubvp8J9KwJZ3S_CAj5/view?usp=drive_link',
+        'https://drive.google.com/file/d/1Hj9TspUwLP3Iz8wKEKTeUp1hLiKW8y8f/view?usp=sharing',
     },
   ],
   currentId: 1,
@@ -86,18 +86,18 @@ const initialPTState: AboutProp = {
       Title: 'Cursos e Certificações',
       Text: `Período de estudo e cursos:
         <br><br>
-        - ETEC - 2018 a 2019: Curso de fundamentos de TI, aprendendo HTML, CSS, C#, Java, Python e outras tecnologias.
+        ETEC - 2018 a 2019: Curso de fundamentos de TI, aprendendo HTML, CSS, C#, Java, Python e outras tecnologias.
         <br><br>
-        - SKILL IDIOMAS - 2016 a 2019: Curso de inglês, do nível básico ao intermediário, desenvolvendo habilidades
+        SKILL IDIOMAS - 2016 a 2019: Curso de inglês, do nível básico ao intermediário, desenvolvendo habilidades
         de escrita, conversação e leitura.
         <br><br>
-        - FIAP - 2020 a 2022: Curso de análise e desenvolvimento de sistemas para aprofundar conhecimentos em tecnologia.
+        FIAP - 2020 a 2022: Curso de análise e desenvolvimento de sistemas para aprofundar conhecimentos em tecnologia.
         <br><br>
         Certificações:
         <br><br>
-        - C#: Conhecimentos avançados em .NET.
+        C#: Conhecimentos avançados em .NET.
         <br><br>
-        - REACT: Possuo certificações da Alura, focadas no desenvolvimento de JavaScript e React.`,
+        REACT: Possuo certificações da Alura, focadas no desenvolvimento de JavaScript e React.`,
       ComplementLink:
         'https://drive.google.com/drive/folders/1BhNlF67fwYeRLH1u-8N5NgsYGVQ8Svyr',
     },
@@ -117,6 +117,11 @@ export const aboutSlice = createSlice({
   name: 'aboutData',
   initialState: initialENState,
   reducers: {
+    updateStorage(state, action: PayloadAction<{ toggleState: boolean }>) {
+      state.aboutData = action.payload.toggleState
+        ? initialENState.aboutData
+        : initialPTState.aboutData;
+    },
     changeAboutLanguage(
       state,
       action: PayloadAction<{ toggleState: boolean }>
@@ -131,5 +136,6 @@ export const aboutSlice = createSlice({
   },
 });
 
-export const { changeAboutLanguage, changeCurrentSlideId } = aboutSlice.actions;
+export const { updateStorage, changeAboutLanguage, changeCurrentSlideId } =
+  aboutSlice.actions;
 export default aboutSlice.reducer;

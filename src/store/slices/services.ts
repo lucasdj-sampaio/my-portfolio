@@ -1,13 +1,15 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IServiceCardProp } from 'shared/types/IServiceCardProp';
 //@ts-ignore
+import P4f from '../../images/p4f.jpeg';
+//@ts-ignore
+import Iza from '../../images/iza.jpeg';
+//@ts-ignore
 import VpnImage from '../../images/vpn_service.png';
 //@ts-ignore
 import PassImage from '../../images/pass_service.png';
 //@ts-ignore
 import IngressImage from '../../images/ingress_service.jpg';
-//@ts-ignore
-import DeleteFileImage from '../../images/deletefile_service.jpg';
 //@ts-ignore
 import PdfToImage from '../../images/pdftoimage_service.jpg';
 //@ts-ignore
@@ -19,6 +21,32 @@ interface arrayProps {
 
 const initialENState: arrayProps = {
   services: [
+    {
+      Image: P4f,
+      Title: 'Pay4fun Website',
+      Description: `The goal of this project was to replace a legacy WordPress platform with a 
+        modern tech stack using React, Redux, Next.js, and Strapi. Using TypeScript, 
+        I created strongly-typed data models to fetch content from Strapi and built 
+        the site in a modular, block-based structure. This allows the marketing team 
+        to update the website instantly and manage multilingual content without developer involvement.`,
+      SeeMore: {
+        Private: true,
+        Link: 'https://p4f.com/',
+      },
+    },
+    {
+      Image: Iza,
+      Title: 'IZA - School Communication Platform',
+      Description: `IZA is an easy-to-use platform that connects schools and guardians 
+        with secure and effective communication. It helps manage student attendance and 
+        meal distribution, reduces dropout rates, improves safety, and optimizes 
+        resources. It also integrates with state databases to support data-driven 
+        decisions and save costs.`,
+      SeeMore: {
+        Private: true,
+        Link: 'https://www.gpnet.com.br/iza/',
+      },
+    },
     {
       Image: VpnImage,
       Title: 'VPN Connect Automation',
@@ -36,19 +64,6 @@ const initialENState: arrayProps = {
         an automation for ticket acquisition that can be configured without the need 
         for coding. This way, I can attend to other tasks while the bot handles the purchases for me!`,
       SeeMore: { Private: false, Link: '' },
-    },
-    {
-      Image: DeleteFileImage,
-      Title: 'Delete Files Scrypt',
-      Description: `Have you ever needed to delete multiple files from a folder and encountered 
-        a situation where, when you select everything and try to delete them all at once, your 
-        computer freezes or becomes unusable while performing this action? Or even in cases where 
-        you need to regularly purge files? With that in mind, I've developed a simple script in which 
-        you specify the desired path, and it does all the work without compromising your machine's processor.`,
-      SeeMore: {
-        Private: true,
-        Link: 'https://github.com/lucasdj-sampaio/DeleteFilesScrypt',
-      },
     },
     {
       Image: PdfToImage,
@@ -89,6 +104,33 @@ const initialENState: arrayProps = {
 const initialPTState: arrayProps = {
   services: [
     {
+      Image: P4f,
+      Title: 'Site Pay4fun',
+      Description: `O objetivo deste projeto foi substituir uma plataforma WordPress legada por 
+        uma stack tecnológica moderna usando React, Redux, Next.js e Strapi. Utilizando TypeScript, 
+        criei modelos de dados fortemente tipados para buscar conteúdo do Strapi e construí 
+        o site em uma estrutura modular baseada em blocos. Isso permite que a equipe de marketing 
+        atualize o site instantaneamente e gerencie conteúdo multilíngue sem a necessidade de 
+        envolvimento de desenvolvedores.`,
+      SeeMore: {
+        Private: true,
+        Link: 'https://p4f.com/',
+      },
+    },
+    {
+      Image: Iza,
+      Title: 'IZA - Plataforma de Comunicação Escolar',
+      Description: `IZA é uma plataforma fácil de usar que conecta escolas e 
+        responsáveis com comunicação segura e eficaz. Ajuda a gerenciar a frequência dos 
+        alunos e a distribuição de refeições, reduz a evasão escolar, melhora a 
+        segurança e otimiza recursos. Também se integra a bancos de dados estaduais 
+        para apoiar decisões baseadas em dados e gerar economia de custos.`,
+      SeeMore: {
+        Private: true,
+        Link: 'https://www.gpnet.com.br/iza/',
+      },
+    },
+    {
       Image: VpnImage,
       Title: 'Conexão de VPN Automatizada',
       Description: `Eu criei um software usado para se conectar automaticamente ao FortClient e ao Cisco VPN. 
@@ -105,19 +147,6 @@ const initialPTState: arrayProps = {
         uma automação para a aquisição de tickets, que pode ser configurada sem a necessidade de 
         codificação. Dessa forma, consigo fazer outras tarefas enquanto o bot realiza as compras para mim!`,
       SeeMore: { Private: false, Link: '' },
-    },
-    {
-      Image: DeleteFileImage,
-      Title: 'Script para Deletar Arquivos',
-      Description: `Você já se deparou com a situação de precisar excluir vários arquivos de uma pasta e, 
-        ao selecionar tudo e tentar deletá-los de uma vez só, seu computador trava ou você não consegue usá-lo 
-        durante essa ação? Ou talvez você precise eliminar arquivos de forma rotineira? Pensando nisso, 
-        criei um script simples em que você informa o caminho desejado e ele faz todo o trabalho sem comprometer o 
-        processamento da sua máquina.`,
-      SeeMore: {
-        Private: true,
-        Link: 'https://github.com/lucasdj-sampaio/DeleteFilesScrypt',
-      },
     },
     {
       Image: PdfToImage,

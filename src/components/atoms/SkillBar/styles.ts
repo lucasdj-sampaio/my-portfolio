@@ -25,4 +25,7 @@ export const StyledBar = styled.div<Props>`
 export const StyledSpan = styled.div`
   font-weight: bold;
   color: var(--background);
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;

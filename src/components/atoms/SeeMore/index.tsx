@@ -9,8 +9,8 @@ interface SeeProps {
 
 export const SeeMoreComponent: React.FC<SeeProps> = ({
   link,
-  disabled,
-  en,
+  disabled = true,
+  en = true,
 }: SeeProps) => {
   const ableHref = {
     href: link,
@@ -26,9 +26,4 @@ export const SeeMoreComponent: React.FC<SeeProps> = ({
       {en ? 'See more' : 'Ver mais'} <AiOutlineArrowRight />
     </SeeMoreStyled>
   );
-};
-
-SeeMoreComponent.defaultProps = {
-  disabled: true,
-  en: true,
 };

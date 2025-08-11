@@ -33,6 +33,13 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
+
+  img {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
   ::-webkit-scrollbar-thumb {
     background-color: rgba(0,0,0,.2);
     border-radius: 5px;

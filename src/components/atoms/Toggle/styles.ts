@@ -9,6 +9,9 @@ export const CostumLabel = styled.label<TextProps>`
   display: inline-block;
   width: 47px;
   height: 22px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   span {
     position: absolute;
