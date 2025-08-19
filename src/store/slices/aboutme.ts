@@ -57,7 +57,7 @@ const initialENState: AboutProp = {
       Title: 'Resume',
       Text: 'Get to know my career in detail through the link below, where you will find my complete resume',
       ComplementLink:
-        'https://drive.google.com/file/d/1Hj9TspUwLP3Iz8wKEKTeUp1hLiKW8y8f/view?usp=sharing',
+        'https://drive.google.com/file/d/1zjet6iOPml-gCZl63Aav_AaWbS77rb07/view?usp=sharing',
     },
   ],
   currentId: 1,
@@ -107,7 +107,7 @@ const initialPTState: AboutProp = {
       Title: 'Currículo ',
       Text: 'Conheça minha carreira em detalhes através do link abaixo, onde você encontrará meu currículo completo',
       ComplementLink:
-        'https://drive.google.com/file/d/1aryH-CWoECjQ7-7XxtfYuPaHAzKEvomI/view?usp=drive_link',
+        'https://drive.google.com/file/d/1aryH-CWoECjQ7-7XxtfYuPaHAzKEvomI/view?usp=sharing',
     },
   ],
   currentId: 1,
