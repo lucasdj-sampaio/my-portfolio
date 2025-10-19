@@ -1,7 +1,7 @@
 import { Toggle } from 'components/atoms/Toggle';
 import { SetStateAction, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Size } from 'shared/DeviceSize';
+import { Size } from 'shared/types/deviceSize';
 import { RootState } from 'store';
 import { windowSizeIsBigestThen } from 'Util/WindowSize';
 import { Bar, NavItems, UserPhoto } from './styles';

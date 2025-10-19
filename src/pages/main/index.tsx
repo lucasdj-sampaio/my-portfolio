@@ -9,10 +9,11 @@ import { useEffect, useState } from 'react';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'store';
-import { changeAboutLanguage, updateStorage } from 'store/slices/aboutme';
+import { changeAboutLanguage, updateAbout } from 'store/slices/aboutme';
 import { changePageTextLanguage } from 'store/slices/otherTextTranslate';
 import { changeSectionLanguage } from 'store/slices/sections';
 import { changeServiceLanguage } from 'store/slices/services';
+import { updateSkills } from 'store/slices/skills';
 import { getCountByWinWidth } from 'Util/WindowSize';
 import {
   AboutMeSlide,
@@ -85,7 +86,7 @@ export const DeveloperPage: React.FC = () => {
   }
 
   useEffect(() => {
-    dispatch(updateStorage({ toggleState: toggleState }));
+    dispatch(updateAbout({ toggleState: toggleState }));
 
     const handleWindowResize = () => {
       setCountWindow(getCountByWinWidth());
@@ -100,9 +101,11 @@ export const DeveloperPage: React.FC = () => {
     return () => {
       window.removeEventListener('resize', handleWindowResize);
     };
-  });
+  }, []);
 
   useEffect(() => {
+    dispatch(updateSkills({ toggleState: toggleState }));
+
     dispatch(changeServiceLanguage({ toggleState: toggleState }));
     dispatch(changeSectionLanguage({ toggleState: toggleState }));
     dispatch(changePageTextLanguage({ toggleState: toggleState }));
@@ -143,7 +146,7 @@ export const DeveloperPage: React.FC = () => {
                 key={`element_${i}_${skill.Title}`}
                 Title={skill.Title as any}
                 Porcent={skill.Porcent}
-                SpanText={skill.SpanText}
+                Level={skill.Level}
               />
             ))}
           </SkillContent>

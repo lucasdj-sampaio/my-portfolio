@@ -1,4 +1,4 @@
-import DeviceSize from 'shared/DeviceSize';
+import DeviceSize from 'shared/types/deviceSize';
 import styled from 'styled-components';
 
 interface FileProps {

@@ -1,10 +1,11 @@
 import { SkillBar } from 'components/atoms/SkillBar';
 import { ReactElement } from 'react';
 import { BsDatabaseFill } from 'react-icons/bs';
-import { FaReact } from 'react-icons/fa';
+import { FaAws, FaNodeJs, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
-import { SiCsharp, SiSelenium, SiTypescript } from 'react-icons/si';
-import { ISkillProperty } from 'shared/types/ISkillProperty';
+import { PiBracketsCurly } from 'react-icons/pi';
+import { SiCsharp, SiPython, SiTypescript } from 'react-icons/si';
+import { ISkillProperty } from 'shared/interfaces/skillProperty';
 import { GroupSkillDiv } from './styled';
 
 const getSkillIcon = (Title: string): ReactElement => {
@@ -19,15 +20,21 @@ const getSkillIcon = (Title: string): ReactElement => {
       return <SiTypescript />;
     case 'SQL':
       return <BsDatabaseFill />;
-    case 'Selenium':
-      return <SiSelenium />;
+    case 'No SQL':
+      return <PiBracketsCurly />;
+    case 'Python':
+      return <SiPython />;
+    case 'AWS':
+      return <FaAws />;
+    case 'Node':
+      return <FaNodeJs />;
   }
 };
 
 export const Skill: React.FC<ISkillProperty> = ({
   Porcent,
   Title,
-  SpanText,
+  Level,
 }: ISkillProperty) => {
   const icon = getSkillIcon(Title);
   return (
@@ -36,7 +43,7 @@ export const Skill: React.FC<ISkillProperty> = ({
 
       <div>
         <h3>{Title}</h3>
-        <SkillBar porcent={Porcent} spanText={SpanText} />
+        <SkillBar porcent={Porcent} level={Level} />
       </div>
     </GroupSkillDiv>
   );

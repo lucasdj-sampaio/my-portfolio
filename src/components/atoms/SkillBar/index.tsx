@@ -2,17 +2,14 @@ import { StyledBar, StyledSpan } from './styles';
 
 interface PropsBar {
   porcent: number;
-  spanText: string;
+  level: string;
 }
 
-export const SkillBar: React.FC<PropsBar> = ({
-  porcent,
-  spanText,
-}: PropsBar) => {
+export const SkillBar: React.FC<PropsBar> = ({ porcent, level }: PropsBar) => {
   return (
     <StyledBar porcente={porcent}>
       <div>
-        <StyledSpan>{spanText}</StyledSpan>
+        <StyledSpan>{level}</StyledSpan>
       </div>
     </StyledBar>
   );

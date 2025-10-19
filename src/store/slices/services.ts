@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IServiceCardProp } from 'shared/types/IServiceCardProp';
+import { IServiceCardProp } from 'shared/interfaces/serviceCardProp';
 //@ts-ignore
 import datePicker from '../../assets/date-picker.gif';
 //@ts-ignore

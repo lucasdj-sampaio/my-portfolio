@@ -1,4 +1,4 @@
-import { Size } from 'shared/DeviceSize';
+import { Size } from 'shared/types/deviceSize';
 
 export function getCountByWinWidth(): number {
   if (window.innerWidth <= Size.TabletS) return 1;

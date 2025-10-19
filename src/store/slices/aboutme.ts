@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IAboutDataType } from 'shared/types/IAboutDataType';
+import { IAboutDataType } from 'shared/interfaces/aboutDataType';
 //@ts-ignore
 import AboutMeImage from '../../assets/meaboutme.jpg';
 //@ts-ignore
@@ -117,7 +117,7 @@ export const aboutSlice = createSlice({
   name: 'aboutData',
   initialState: initialENState,
   reducers: {
-    updateStorage(state, action: PayloadAction<{ toggleState: boolean }>) {
+    updateAbout(state, action: PayloadAction<{ toggleState: boolean }>) {
       state.aboutData = action.payload.toggleState
         ? initialENState.aboutData
         : initialPTState.aboutData;
@@ -136,6 +136,6 @@ export const aboutSlice = createSlice({
   },
 });
 
-export const { updateStorage, changeAboutLanguage, changeCurrentSlideId } =
+export const { updateAbout, changeAboutLanguage, changeCurrentSlideId } =
   aboutSlice.actions;
 export default aboutSlice.reducer;

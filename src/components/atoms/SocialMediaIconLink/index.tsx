@@ -1,5 +1,5 @@
 import { BsGithub, BsLinkedin, BsWhatsapp } from 'react-icons/bs';
-import { ISocialMediaContact } from 'shared/types/ISocialMediaContact';
+import { ISocialMediaContact } from 'shared/interfaces/socialMediaContact';
 
 interface Props {
   type: 'Git' | 'Linkedin' | 'Wpp';

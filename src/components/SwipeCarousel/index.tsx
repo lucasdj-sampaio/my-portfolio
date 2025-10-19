@@ -1,12 +1,12 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { IAboutDataType } from 'shared/interfaces/aboutDataType';
+import { changeCurrentSlideId } from 'store/slices/aboutme';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import { EffectCards } from 'swiper/modules';
-import { IAboutDataType } from 'shared/types/IAboutDataType';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { SwiperStyles } from './styles';
-import { useDispatch } from 'react-redux';
-import { changeCurrentSlideId } from 'store/slices/aboutme';
-import { useEffect } from 'react';
 
 interface SwipeProp {
   data: IAboutDataType[];

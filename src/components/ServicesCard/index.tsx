@@ -1,6 +1,6 @@
 import { SeeMoreComponent } from 'components/atoms/SeeMore';
 import { useState } from 'react';
-import { IServiceCardProp } from 'shared/types/IServiceCardProp';
+import { IServiceCardProp } from 'shared/interfaces/serviceCardProp';
 import { StyledCard, StyledCardContent, StyledDarkCard } from './styles';
 
 interface ServiceCardProps {
