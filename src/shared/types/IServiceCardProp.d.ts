@@ -4,7 +4,7 @@ export interface IServiceCardProp {
   Description: string;
   TopSpacement?: boolean;
   SeeMore: {
-    Private: boolean;
+    Private?: boolean;
     Link?: string;
   };
 }

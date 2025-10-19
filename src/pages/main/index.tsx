@@ -35,9 +35,9 @@ import {
   WorkSection,
 } from './styles';
 //@ts-ignore
-import BackgroundImage from '../../images/background_profile.png';
+import BackgroundImage from '../../assets/background_profile.png';
 //@ts-ignore
-import WorkImage from '../../images/work_picture.jpg';
+import WorkImage from '../../assets/work_picture.jpg';
 
 export const DeveloperPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -156,7 +156,7 @@ export const DeveloperPage: React.FC = () => {
         <PageSection id={`section_${sectionsData[0].toLowerCase()}`}>
           <WorkSection>
             <WorkImageDiv>
-              <img alt="Work Image" src={WorkImage} />
+              <img alt="Work Image" src={WorkImage} draggable="false" />
             </WorkImageDiv>
 
             <WorkContent>

@@ -1,10 +1,10 @@
 import { Toggle } from 'components/atoms/Toggle';
 import { SetStateAction, useEffect, useState } from 'react';
-import { Bar, NavItems, UserPhoto } from './styles';
 import { useSelector } from 'react-redux';
+import { Size } from 'shared/DeviceSize';
 import { RootState } from 'store';
 import { windowSizeIsBigestThen } from 'Util/WindowSize';
-import { Size } from 'shared/DeviceSize';
+import { Bar, NavItems, UserPhoto } from './styles';
 
 interface NavigationProps {
   toggleState: boolean;
@@ -35,8 +35,14 @@ export const NavigationBar: React.FC<NavigationProps> = ({
   return (
     <Bar scrooled={scrollPage}>
       <UserPhoto>
-        <img alt="profile" src={`${process.env.REACT_APP_GIT_URL}.png`} />
-        <label>Sampaio</label>
+        <a href="#top">
+          <img
+            alt="profile"
+            src={`${process.env.REACT_APP_GIT_URL}.png`}
+            draggable="false"
+          />
+          <label>Sampaio</label>
+        </a>
       </UserPhoto>
 
       <nav>

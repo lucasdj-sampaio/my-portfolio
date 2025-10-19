@@ -35,6 +35,10 @@ export const UserPhoto = styled.div`
   align-items: center;
   justify-content: space-around;
 
+  a {
+    outline: none;
+  }
+
   img {
     width: 45px;
   }

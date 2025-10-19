@@ -11,7 +11,7 @@ const initialState: arrayProp = {
     { Title: 'JavaScript', Porcent: 92, SpanText: 'Sr' },
     { Title: 'TypeScript', Porcent: 87, SpanText: 'Sr' },
     { Title: 'C#', Porcent: 90, SpanText: 'Sr' },
-    { Title: 'Sql Server', Porcent: 88, SpanText: 'Sr' },
+    { Title: 'SQL', Porcent: 88, SpanText: 'Sr' },
     { Title: 'Selenium', Porcent: 90, SpanText: 'Sr' },
   ],
 };

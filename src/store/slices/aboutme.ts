@@ -1,13 +1,13 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { IAboutDataType } from 'shared/types/IAboutDataType';
 //@ts-ignore
-import AboutMeImage from '../../images/meaboutme.jpg';
+import AboutMeImage from '../../assets/meaboutme.jpg';
 //@ts-ignore
-import CertificationImage from '../../images/certification_aboutme.jpeg';
+import CertificationImage from '../../assets/certification_aboutme.jpeg';
 //@ts-ignore
-import CvPt from '../../images/cv_pt.png';
+import CvPt from '../../assets/cv_pt.png';
 //@ts-ignore
-import CvEn from '../../images/cv_en.png';
+import CvEn from '../../assets/cv_en.png';
 
 interface AboutProp {
   aboutData: IAboutDataType[];

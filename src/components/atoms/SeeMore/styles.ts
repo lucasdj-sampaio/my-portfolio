@@ -2,7 +2,7 @@ import DeviceSize from 'shared/DeviceSize';
 import styled, { css } from 'styled-components';
 
 interface DisabledSeeMore {
-  disable?: boolean;
+  disabled?: boolean;
 }
 
 export const SeeMoreStyled = styled.a<DisabledSeeMore>`
@@ -11,8 +11,8 @@ export const SeeMoreStyled = styled.a<DisabledSeeMore>`
   column-gap: 5px;
   font-size: 13px;
   font-weight: 500;
-  color: var(${p => (p.disable ? '--secundColor' : '--servicesBackground')});
-  cursor: ${p => (p.disable ? 'pointer' : 'default')};
+  color: var(${p => (p.disabled ? '--servicesBackground' : '--secundColor')});
+  cursor: ${p => (p.disabled ? 'default' : 'pointer')};
   :focus {
     outline: none;
   }
@@ -20,17 +20,21 @@ export const SeeMoreStyled = styled.a<DisabledSeeMore>`
   -ms-user-select: none;
   user-select: none;
 
-  ${({ disable }) => {
-    if (disable) {
+  ${({ disabled }) => {
+    if (!disabled) {
       return css`
+        cursor: pointer;
+
         :hover svg {
           transform: translateX(5px);
           transition: 0.5s;
         }
       `;
+    } else {
+      return css`
+        cursor: not-allowed;
+      `;
     }
-
-    return '';
   }}
 
   @media ${DeviceSize.TabletS} {

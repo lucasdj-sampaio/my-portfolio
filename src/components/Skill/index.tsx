@@ -17,7 +17,7 @@ const getSkillIcon = (Title: string): ReactElement => {
       return <SiCsharp />;
     case 'TypeScript':
       return <SiTypescript />;
-    case 'Sql Server':
+    case 'SQL':
       return <BsDatabaseFill />;
     case 'Selenium':
       return <SiSelenium />;

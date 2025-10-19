@@ -1,11 +1,13 @@
 import DeviceSize from 'shared/DeviceSize';
 import styled, { css } from 'styled-components';
 
-interface TopSpacementProp {
+interface CardProps {
   TopSpacement?: boolean;
+  disabled?: boolean;
 }
 
-export const StyledCard = styled.div<TopSpacementProp>`
+export const StyledCard = styled.div<CardProps>`
+  position: relative;
   background-color: var(--textColor);
   border-radius: 25px;
   overflow: hidden;
@@ -20,17 +22,34 @@ export const StyledCard = styled.div<TopSpacementProp>`
         }
       `;
     }
-
-    return '';
   }}
+
+  :hover {
+    ${({ disabled }) => {
+      if (!disabled) {
+        return css`
+          cursor: pointer;
+
+          svg {
+            transition: 0.5s;
+            transform: translateX(5px);
+          }
+        `;
+      } else {
+        return css`
+          cursor: not-allowed;
+        `;
+      }
+    }}
+  }
+
+  img {
+    width: 100%;
+  }
 
   @media ${DeviceSize.Tablet} {
     transform: translateY(0px);
   }
-`;
-
-export const StyledImage = styled.img`
-  width: 100%;
 `;
 
 export const StyledCardContent = styled.div`
@@ -40,11 +59,16 @@ export const StyledCardContent = styled.div`
   padding: 20px 20px 25px 20px;
   height: 215px;
 
+  div {
+    height: 100%;
+  }
+
   h3 {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 15px;
     color: var(--secundColor);
+    user-select: none;
   }
 
   p {
@@ -79,4 +103,12 @@ export const StyledCardContent = styled.div`
       font-size: 12px;
     }
   }
+`;
+
+export const StyledDarkCard = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
 `;
